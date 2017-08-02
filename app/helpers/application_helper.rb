@@ -18,4 +18,20 @@ module ApplicationHelper
     "<span class= 'glyphicon glyphicon-#{shape}'></span>".html_safe
   end
 
+  def user_roles(user)
+    user.roles.map(&:name).join(',').titleize
+  end
+
+  def resource_name
+   :user
+ end
+
+ def resource
+   @resource ||= User.new
+ end
+
+ def devise_mapping
+   @devise_mapping ||= Devise.mappings[:user]
+ end
+ 
 end

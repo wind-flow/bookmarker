@@ -7,18 +7,18 @@ class ApplicationAuthorizer < Authority::Authorizer
   # @param [Symbol] adjective; example: `:creatable`
   # @param [Object] user - whatever represents the current user in your app
   # @return [Boolean]
-  def self.default(adjective, user)
+  def self.default(adjective, user, options={})
     # 'Whitelist' strategy for security: anything not explicitly allowed is
     # considered forbidden.
-    false
+    user.has_role? :admin
   end
 
   def updatable_by?(user)
-    resource.user == user
+    resource.user == user || user.has_role?(:admin)
   end
-  
+
   def deletable_by?(user)
-    resource.user == user
+    resource.user == user || user.has_role?(:admin)
   end
 
 end

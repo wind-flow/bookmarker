@@ -5,5 +5,5 @@ class ApplicationController < ActionController::Base
     Authority.logger.warn(error.message)
     redirect_to request.referrer.presence || root_path, :alert => "권한이 없습니다"
   end
-  
+
 end

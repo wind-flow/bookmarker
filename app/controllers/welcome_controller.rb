@@ -1,4 +1,6 @@
+# class WelcomeController < ApplicationController
 class WelcomeController < ApplicationController
-  def index
+  layout 'login_ap'
+  def login
   end
 end

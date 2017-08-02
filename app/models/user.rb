@@ -7,4 +7,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
   has_many :posts, dependent: :destroy
+
+  after_create :set_default_role, if: Proc.new { User.count > 1}
+  private
+
+  def set_default_role
+    add_role :user
+  end
+
 end
