@@ -1,0 +1,13 @@
+<h1>로그인</h1>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :email, required: false, autofocus: true  %>
+      <%= f.input :password, required: false %>
+      <!-- <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %> -->
+    </div>
+
+    <div class="form-actions">
+      <!-- <%= link_to '계속하기', user_session_path, class: 'btn btn-default' %> -->
+      <%= f.button :submit, "로그인" %>
+    </div>
+  <% end %>
