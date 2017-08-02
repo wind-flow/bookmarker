@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <title>Login화면</title>
@@ -9,8 +9,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <% content_for :styleshets do %>
+      #image_container {background-color: yellow; color: blue;}
+    <% end %>
   </head>
     <body>
-      <%= yield %>
+
+      <div class= "login container">
+        <%= yield %>
+      </div>
+
+      <div id ="image_container">
+        <%= render partial: "welcome/side_image", locals: { myclass: 'image'} %>
+      </div>
   </body>
-</html>
+</html> -->

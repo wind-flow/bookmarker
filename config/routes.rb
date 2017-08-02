@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  
+  root 'welcome#login'
   resources :posts
-  devise_for :users
-  # , :controllers => { :sessions => "welcome"}
-  devise_scope :user do
-    get '/', to: 'devise/sessions#new'
-  end
+  devise_for :users, controllers: {registrations: 'admin/registrations', sessions: 'admin/sessions'}
+  # :controllers => { :sessions => "admin/sessions"}
+  # devise_scope :user do
+  #   get '/', to: 'welcome#login'
+  # end
 
 
 
