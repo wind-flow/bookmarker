@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'welcome#login'
+  root 'posts#index'
   resources :posts
-  devise_for :users, controllers: {registrations: 'admin/registrations', sessions: 'admin/sessions'}
+  devise_for :users, controllers: {registrations: 'admin/registrations', :omniauth_callbacks => "admin/omniauth_callbacks"}
   # :controllers => { :sessions => "admin/sessions"}
   # devise_scope :user do
   #   get '/', to: 'welcome#login'

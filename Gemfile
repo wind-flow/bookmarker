@@ -8,6 +8,7 @@ end
 gem 'devise' #회원가입 및 인증
 gem 'rolify' #role 관리
 gem 'authority' #권한 설정
+gem 'omniauth-facebook' #페이스북 로그인
 
 #화면 레이아웃 용
 gem 'bootstrap-sass'
