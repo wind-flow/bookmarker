@@ -5,7 +5,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable
+         :confirmable, :omniauthable, :omniauth_providers => [:facebook]
   has_many :posts, dependent: :destroy
 
   after_create :set_default_role, if: Proc.new { User.count > 1}
@@ -15,4 +15,6 @@ class User < ApplicationRecord
     add_role :user
   end
 
+  def facebook
+  end
 end

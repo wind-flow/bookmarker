@@ -1,8 +1,25 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
-
-<table>
+<h1>포스트</h1>
+<div class ="container">
+  <div class="row">
+    <div class="col-md-12">
+      <% @posts.each do |post| %>
+        <ul>
+          <%= "#{post.id}번 글입니다" %>
+          <li>
+              <%= link_to post.title, post %>
+              <%= post.content %>
+              <% if user_signed_in? %>
+              <%= link_to icon('pencil'), edit_post_path(post) if post.updatable_by? current_user %>&nbsp;
+              <%= link_to icon('trash'), post, method: :delete, data: { confirm: 'Are you sure?' } if post.deletable_by? current_user %>
+              <% end %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- <table>
   <thead>
     <tr>
       <th>Title</th>
@@ -25,8 +42,8 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to '새 글 쓰기', new_post_path %>
