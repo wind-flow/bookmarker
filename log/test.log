@@ -118,3 +118,5 @@ Migrating to RolifyCreateRoles (20170729093744)
             FROM sqlite_temp_master
             WHERE name='index_users_roles_on_user_id_and_role_id' AND type='index'
 [0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
