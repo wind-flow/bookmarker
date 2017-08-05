@@ -25,15 +25,15 @@
     </div>
     <!-- 여기는 log in -->
   <% else %>
+      
+        
+     
       <!-- 오른쪽에 들어갈 로그인 -->
       <div class= "login container">
         <%= yield %>
       </div>
-      <hr>
-      <!-- 왼쪽에 들어갈 이미지 부분 -->
-      <div class ="image container">
-        <%= render partial: "welcome/side_image", locals: { myclass: 'image'} %>
-      </div>
+      
+    
   <% end %>
   </body>
 </html>
