@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'posts#index'
   resources :posts
+  post "bookmkfolder/createfolder" => "bookmkfolder#createfolder"
   devise_for :users, controllers: {registrations: 'admin/registrations', :omniauth_callbacks => "admin/omniauth_callbacks"}
   # :controllers => { :sessions => "admin/sessions"}
   # devise_scope :user do

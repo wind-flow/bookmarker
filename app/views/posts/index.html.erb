@@ -1,8 +1,39 @@
+<script>
+$(document).ready((function(){
+    $("#addlist").click(function(){
+      var folder = document.createElement("div");  // Create with DOM
+
+      $(folder).attr("class", "portlet")
+      $(folder).attr("name", "test")
+      $(folder).css("border", "1px solid")
+      $(folder).css("border-color", "red")
+      $(folder).html("ASDFFF")
+
+      $.post("bookmkfolder/createfolder",
+      {
+        "bookmkfolder[bookmkfoldertitle]" : "test",
+        "bookmkfolder[bookmkfoldercolor]" : "red"
+      },
+          function(data, status){
+              // alert("Data: " + data + "\nStatus: " + status);
+              $(".item").append(folder);         // Append the new elements
+          });
+      // $(".item").append(folder);         // Append the new elements
+    })
+}))
+</script>
 
 <h1>포스트</h1>
 <div class ="container">
   <div class="row">
     <div class="col-md-12">
+      <div class=item>
+        <div class="portlet">
+          ASDF
+        </div>
+        <input type="button" id="addlist" value="add list...."/>
+      </div>
+
       <% @posts.each do |post| %>
         <ul>
           <%= "#{post.id}번 글입니다" %>

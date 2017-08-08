@@ -1,0 +1,7 @@
+$(document).ready() = $(function(){
+    $("addlist").click(function(){
+      var addlist = document.createElement("div");  // Create with DOM
+      addlist.attr("class", "portlet")
+      $("#item").append(addlist);         // Append the new elements
+    })
+})
