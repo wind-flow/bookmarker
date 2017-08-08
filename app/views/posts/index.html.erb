@@ -2,11 +2,19 @@
 $(document).ready((function(){
     $("#addlist").click(function(){
       var folder = document.createElement("div");  // Create with DOM
+<<<<<<< HEAD
+=======
+
+>>>>>>> c1872d1b865113b574c7b21a9114516ecba39744
       $(folder).attr("class", "portlet")
       $(folder).attr("name", "test")
       $(folder).css("border", "1px solid")
       $(folder).css("border-color", "red")
       $(folder).html("ASDFFF")
+<<<<<<< HEAD
+=======
+
+>>>>>>> c1872d1b865113b574c7b21a9114516ecba39744
       $.post("bookmkfolder/createfolder",
       {
         "bookmkfolder[bookmkfoldertitle]" : "test",
