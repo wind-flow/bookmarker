@@ -15158,3 +15158,268 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 1294ms (Views: 1293.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-08 19:46:15 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 75ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 19:46:37 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (259.1ms)
+Completed 200 OK in 4870ms (Views: 4828.5ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-08-08 19:47:01 +0900
+Processing by Admin::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 2097ms (Views: 2094.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-08-08 19:47:50 +0900
+Processing by Admin::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 2181ms (Views: 2179.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-08-08 19:59:44 +0900
+Processing by Admin::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 2138ms (Views: 2135.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-08-08 20:00:28 +0900
+Processing by Admin::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DgNBGXbTT0Ipbzl5zf/KpMW6Zz3bN5MTxX1ioE92faW6B5XfinM7w4GojEFT1LeP0AQCgxtASxk7HqCqGFOfBQ==", "user"=>{"username"=>"testseung", "email"=>"test2@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"회원가입"}
+  [1m[35m (3.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test2@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "encrypted_password", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "test2@gmail.com"], ["username", "testseung"], ["encrypted_password", "$2a$11$Hq1/BXWyq1VoBvi26Be7fupmpH7GRHBSbl3KnWmBCX45Io8vcbEWC"], ["confirmation_token", "7bqMaNMxVFJuLtiUmnuZ"], ["confirmation_sent_at", "2017-08-08 11:00:29.640726"], ["created_at", "2017-08-08 11:00:29.639728"], ["updated_at", "2017-08-08 11:00:29.639728"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "user"], ["LIMIT", 1]]
+  [1m[36mRole Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND "roles"."id" = ? LIMIT ?[0m  [["user_id", 8], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "roles".id FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."id" = 1[0m
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES (?, ?)[0m  [["user_id", 8], ["role_id", 1]]
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (2.0ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 2827.4ms
+Sent mail to test2@gmail.com (989.1ms)
+Date: Tue, 08 Aug 2017 20:00:35 +0900
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: test2@gmail.com
+Message-ID: <598999d3a7b7c_59803879db451684@HUHSEUNG.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome test2@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=7bqMaNMxVFJuLtiUmnuZ">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 9905ms (ActiveRecord: 25.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-08 20:00:39 +0900
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 20:00:39 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (126.6ms)
+Completed 200 OK in 1510ms (Views: 1508.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=7bqMaNMxVFJuLtiUmnuZ" for 127.0.0.1 at 2017-08-08 20:01:24 +0900
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"7bqMaNMxVFJuLtiUmnuZ"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "7bqMaNMxVFJuLtiUmnuZ"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2017-08-08 11:01:24.470295"], ["updated_at", "2017-08-08 11:01:24.475298"], ["id", 8]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 77ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 20:01:24 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (148.6ms)
+Completed 200 OK in 1529ms (Views: 1526.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-08 20:01:36 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SZd1ygyAiW3K9+Ik66HXi+JgC6mZxqQBbaGpPwq3ufb9k6EM8CD97GIwVxx1iqqg995uF1mxfAuTwms1XZJbVg==", "user"=>{"email"=>"test2@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"로그인"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test2@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-08-08 11:01:36.746071"], ["last_sign_in_at", "2017-08-08 11:01:36.746071"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2017-08-08 11:01:36.753076"], ["id", 8]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1959ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-08 20:01:38 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (11.0ms)
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 8]]
+  Rendered layouts/_header.html.erb (29.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 1325ms (Views: 1140.0ms | ActiveRecord: 5.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-08 20:02:58 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TTUBOhN2CgEgtTuNk9ZgjU7Xe4UcSP1s0Xp/8pgi/hcAi51wxTYSW7sZAa5x9zHfzO3QV6TtOfjIUuUdE08Gyg=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 43ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-08 20:02:58 +0900
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 20:02:58 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (129.1ms)
+Completed 200 OK in 1383ms (Views: 1381.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-08-08 20:03:02 +0900
+Processing by Admin::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 2214ms (Views: 2211.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-08-08 20:03:15 +0900
+Processing by Admin::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lz885VM6fvGFDRTODC+duYUmIt3rUeXE96sMDGHSx36xdikK8EXlLr9PNFQkUdbfrwLaABp7XLpaHoFgAzf+FA==", "user"=>{"username"=>"testtest", "email"=>"test3@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"회원가입"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test3@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "encrypted_password", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "test3@gmail.com"], ["username", "testtest"], ["encrypted_password", "$2a$11$K7J.IuIWm285NJsUw85TXe3GjBE8Owe866BksiQLfIkBSNpLyvQtG"], ["confirmation_token", "DbEvVqXaDGLXkQuEfoNY"], ["confirmation_sent_at", "2017-08-08 11:03:16.368296"], ["created_at", "2017-08-08 11:03:16.368296"], ["updated_at", "2017-08-08 11:03:16.368296"]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "user"], ["LIMIT", 1]]
+  [1m[36mRole Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND "roles"."id" = ? LIMIT ?[0m  [["user_id", 9], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "roles".id FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 9]]
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."id" = 1[0m
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 9]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES (?, ?)[0m  [["user_id", 9], ["role_id", 1]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (2.0ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 2385.9ms
+Sent mail to test3@gmail.com (846.8ms)
+Date: Tue, 08 Aug 2017 20:03:18 +0900
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: test3@gmail.com
+Message-ID: <59899a76e8a41_59803879db4517bc@HUHSEUNG.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome test3@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=DbEvVqXaDGLXkQuEfoNY">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 6079ms (ActiveRecord: 19.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-08 20:03:22 +0900
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 20:03:22 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (145.1ms)
+Completed 200 OK in 1404ms (Views: 1400.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=DbEvVqXaDGLXkQuEfoNY" for 127.0.0.1 at 2017-08-08 20:03:30 +0900
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"DbEvVqXaDGLXkQuEfoNY"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "DbEvVqXaDGLXkQuEfoNY"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2017-08-08 11:03:31.036645"], ["updated_at", "2017-08-08 11:03:31.040646"], ["id", 9]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 69ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 20:03:31 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (139.7ms)
+Completed 200 OK in 1640ms (Views: 1637.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-08 20:08:01 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dT3hl+CV4rYQRe2jnERGftEYPWX+0GPK1vnAsDkeuvHrdPR4Q+p5aSoHzTm0Og0Y+zzFuA/62rR7TE3cW/uDmw==", "user"=>{"email"=>"test1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"로그인"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-08-08 11:08:01.875268"], ["sign_in_count", 2], ["updated_at", "2017-08-08 11:08:01.880272"], ["id", 7]]
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1777ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-08 20:08:03 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (6.0ms)
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 7]]
+  Rendered layouts/_header.html.erb (16.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 1268ms (Views: 1160.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-08-08 20:08:12 +0900
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (99.6ms)
+  Rendered posts/new.html.erb within layouts/application (215.4ms)
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 7]]
+  Rendered layouts/_header.html.erb (16.5ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 1626ms (Views: 1522.5ms | ActiveRecord: 3.0ms)
+
+
