@@ -1,4 +1,4 @@
-html { 
+html {
   background:url(bg.png);
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -15,7 +15,7 @@ html {
     font-size: 40px
 }
 
-.form{
+#new_user{
     margin: 0 auto;
 
     position: fixed;
@@ -38,7 +38,7 @@ html {
     font-family: Raleway;
 }
 
-.form:before {
+#new_user:before {
     content: "";
     width: 110%;
     height: 110%;
@@ -53,7 +53,7 @@ html {
     filter: blur(3px);
 }
 
-.form .forceColor{
+#new_user .forceColor{
     width: 100%;
     height: 100%;
 
@@ -64,7 +64,7 @@ html {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.form .form_row_email .spanColor{
+#new_user .form_raw_email .spanColor{
 
     position: absolute;
     width: 0px;
@@ -80,7 +80,7 @@ html {
     transition: width 150ms ease-in-out, background-color 150ms ease-in-out 250ms, border 150ms ease-in-out 250ms;
 }
 
-.form .form_row_email .input{
+#new_user .form_row_email .input{
     display: block;
     width: 100%;
     position: relative;
@@ -100,7 +100,7 @@ html {
     font-family: Raleway;
 }
 
-.form .submit, .form .sign_up{
+#new_user .btn{
     padding: 10px 20px;
     width: 100%;
     font-size: 1.2rem;
@@ -118,7 +118,6 @@ html {
     text-align: center;
 }
 
-.form .sign_up{
+#new_user .sign_up{
     margin-top: 10px;
 }
-

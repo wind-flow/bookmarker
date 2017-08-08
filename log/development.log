@@ -14284,3 +14284,533 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 1429ms (Views: 1427.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-08 13:01:13 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 85ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:01:39 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (381.9ms)
+Completed 200 OK in 7221ms (Views: 7179.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:08:38 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (7.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (214.0ms)
+Completed 200 OK in 2133ms (Views: 2092.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:09:20 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (137.1ms)
+Completed 200 OK in 9438ms (Views: 9433.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:10:03 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (144.1ms)
+Completed 200 OK in 1478ms (Views: 1474.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:11:06 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (132.1ms)
+Completed 200 OK in 1812ms (Views: 1809.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:11:20 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (132.3ms)
+Completed 200 OK in 1988ms (Views: 1984.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:11:52 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 1390ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (c:/Ruby22-x64/DevKit/git/bookmarker/app/views/devise/sessions/new.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+... label: '비밀번호' required: false );@output_buffer.safe...
+...                               ^):
+  
+app/views/devise/sessions/new.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.5ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (6170.6ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:12:10 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (256.2ms)
+Completed 200 OK in 7435ms (Views: 7433.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:13:57 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (150.2ms)
+Completed 200 OK in 1476ms (Views: 1472.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:18:36 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (960.9ms)
+Completed 500 Internal Server Error in 2038ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `<a href="/users/sign_up">회원가입</a>' for #<SimpleForm::FormBuilder:0x0000000da396b8>):
+    10: 
+    11:   <div class="form-actions">
+    12:     <%= f.button :submit, "로그인" %>
+    13:     <%= f.button link_to '회원가입', new_registration_path(resource_name) %>
+    14:   </div>
+    15:     <%= render "devise/shared/links" %>
+    16: <% end %>
+  
+app/views/devise/sessions/new.html.erb:13:in `block in _app_views_devise_sessions_new_html_erb__1251978594_115102460'
+app/views/devise/sessions/new.html.erb:3:in `_app_views_devise_sessions_new_html_erb__1251978594_115102460'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (23.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.5ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (7060.2ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:19:30 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (840.7ms)
+Completed 500 Internal Server Error in 2041ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `<a href="/users/sign_up">회원가입</a>' for #<SimpleForm::FormBuilder:0x0000000d5481e0>):
+    10: 
+    11:   <div class="form-actions">
+    12:     <%= f.button :submit, "로그인" %>
+    13:     <!-- <%= f.button link_to '회원가입', new_registration_path(resource_name) %> -->
+    14:   </div>
+    15:     <%= render "devise/shared/links" %>
+    16: <% end %>
+  
+app/views/devise/sessions/new.html.erb:13:in `block in _app_views_devise_sessions_new_html_erb__1251978594_116065740'
+app/views/devise/sessions/new.html.erb:3:in `_app_views_devise_sessions_new_html_erb__1251978594_116065740'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (5858.5ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:21:32 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (20.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (149.7ms)
+Completed 200 OK in 1441ms (Views: 1436.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:26:52 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (133.1ms)
+Completed 200 OK in 1740ms (Views: 1655.4ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:28:58 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (272.2ms)
+Completed 500 Internal Server Error in 1864ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    16: <% end %>
+    17: 
+    18: 
+    19: <!-- # <%= filtered_form_for(@topic, display_only: [:name]) do |f| %>
+    20: #   <%= f.error_notification %>
+    21: #
+    22: #   <div class="form-inputs">
+  
+app/helpers/application_helper.rb:56:in `filtered_form_for'
+app/views/devise/sessions/new.html.erb:19:in `_app_views_devise_sessions_new_html_erb__1251978594_25587600'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (5680.6ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:30:42 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (126.1ms)
+Completed 200 OK in 1473ms (Views: 1426.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:36:42 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (131.9ms)
+Completed 200 OK in 1753ms (Views: 1745.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:36:49 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (174.1ms)
+Completed 200 OK in 1837ms (Views: 1834.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:38:49 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (146.1ms)
+Completed 200 OK in 5763ms (Views: 5758.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:39:28 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (153.0ms)
+Completed 200 OK in 6608ms (Views: 6602.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:43:31 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (149.1ms)
+Completed 200 OK in 7686ms (Views: 7681.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:48:20 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (125.1ms)
+Completed 200 OK in 1375ms (Views: 1371.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:49:41 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (135.1ms)
+Completed 200 OK in 5529ms (Views: 5526.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:50:41 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (206.2ms)
+Completed 200 OK in 6827ms (Views: 6824.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:51:31 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (190.6ms)
+Completed 200 OK in 8337ms (Views: 8328.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:52:19 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (122.1ms)
+Completed 200 OK in 5301ms (Views: 5298.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:54:04 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (249.8ms)
+Completed 200 OK in 5578ms (Views: 5575.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:55:53 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (245.2ms)
+Completed 200 OK in 6643ms (Views: 6639.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:56:02 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (127.8ms)
+Completed 200 OK in 7709ms (Views: 7706.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:58:26 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (177.1ms)
+Completed 200 OK in 5727ms (Views: 5720.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:58:44 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (223.2ms)
+Completed 200 OK in 2073ms (Views: 2070.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 13:59:49 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (192.2ms)
+Completed 200 OK in 1839ms (Views: 1834.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 14:01:00 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (134.1ms)
+Completed 200 OK in 1864ms (Views: 1861.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 14:01:53 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (168.6ms)
+Completed 200 OK in 1842ms (Views: 1839.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 14:02:29 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (208.0ms)
+Completed 200 OK in 1433ms (Views: 1430.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 14:04:03 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (200.1ms)
+Completed 200 OK in 1927ms (Views: 1923.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 14:04:11 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (125.1ms)
+Completed 200 OK in 1484ms (Views: 1481.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 14:04:16 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (132.9ms)
+Completed 200 OK in 1697ms (Views: 1694.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 14:05:01 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 1248ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (c:/Ruby22-x64/DevKit/git/bookmarker/app/views/devise/sessions/new.html.erb:8: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+...laceholder: 'Password', label :false, required: false, input...
+...                               ^
+c:/Ruby22-x64/DevKit/git/bookmarker/app/views/devise/sessions/new.html.erb:8: Can't assign to false
+... label :false, required: false, input_html: {:class => "inpu...
+...                               ^):
+  
+app/views/devise/sessions/new.html.erb:8: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/views/devise/sessions/new.html.erb:8: Can't assign to false
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (5445.4ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 14:05:41 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (160.1ms)
+Completed 200 OK in 1728ms (Views: 1724.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 14:09:34 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (803.4ms)
+Completed 500 Internal Server Error in 1870ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_registrations_path' for #<#<Class:0x0000000d7a9c68>:0x0000000daea698>):
+    11: 
+    12:   <div class="form-actions">
+    13:     <%= f.button :submit, "로그인" %>
+    14:     <%= link_to "회원가입", new_registrations_path, class: 'btn sign_up' %>
+    15:   </div>
+    16:     <%= render "devise/shared/links" %>
+    17: <% end %>
+  
+app/views/devise/sessions/new.html.erb:14:in `block in _app_views_devise_sessions_new_html_erb__1251978594_114771880'
+app/views/devise/sessions/new.html.erb:3:in `_app_views_devise_sessions_new_html_erb__1251978594_114771880'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (5188.2ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 14:10:20 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (120.6ms)
+Completed 500 Internal Server Error in 1321ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (0 for 1+)):
+    11: 
+    12:   <div class="form-actions">
+    13:     <%= f.button :submit, "로그인" %>
+    14:     <%= link_to "회원가입", new_registration_path, class: 'btn sign_up' %>
+    15:   </div>
+    16:     <%= render "devise/shared/links" %>
+    17: <% end %>
+  
+app/views/devise/sessions/new.html.erb:14:in `block in _app_views_devise_sessions_new_html_erb__1251978594_134286320'
+app/views/devise/sessions/new.html.erb:3:in `_app_views_devise_sessions_new_html_erb__1251978594_134286320'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (27.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (6456.9ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 14:10:59 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (175.1ms)
+Completed 200 OK in 9386ms (Views: 9376.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-08-08 14:11:26 +0900
+Processing by Admin::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (143.1ms)
+Completed 200 OK in 2860ms (Views: 2856.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-08 14:11:38 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0IRP7L4TcYUEzapCULH6+Mw3x4y4tKW48ifNHafTAwnykK0f1C5EeEFf5hSMO8rSBOe1P1aJVDzStPLBjkCfGw==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"로그인"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-08-08 05:11:38.742008"], ["last_sign_in_at", "2017-08-05 13:00:05.509813"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 4], ["updated_at", "2017-08-08 05:11:38.749013"], ["id", 1]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2541ms (ActiveRecord: 21.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-08 14:11:40 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (12.0ms)
+  [1m[36mRole Load (10.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (476.8ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 2088ms (Views: 1843.2ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 14:11:46 +0900
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-08 14:11:50 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OtYSCIQ8xcZP9foacZWOu0cqcN2NnLoUyyen2Pz0C1DneErx/LVpWsqndhvvRavgO556TQnZgcGtS00PBhn0TQ=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 36ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-08 14:11:51 +0900
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-08 14:11:51 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (128.1ms)
+Completed 200 OK in 1484ms (Views: 1480.1ms | ActiveRecord: 0.0ms)
+
+
