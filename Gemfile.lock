@@ -268,7 +268,6 @@ DEPENDENCIES
   rails_db
   rolify
   sass-rails (~> 5.0)
-  simple_form
   spring
   sqlite3
   turbolinks (~> 5)

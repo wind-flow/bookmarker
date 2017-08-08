@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  # protect_from_forgery with: :exception
   before_action :authenticate_user!
   def authority_forbidden(error)
     Authority.logger.warn(error.message)
