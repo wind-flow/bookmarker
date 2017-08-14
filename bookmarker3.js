@@ -1,13 +1,13 @@
 $(document).ready(function(){
 
-    $('#addPanelBtn').on('click', function(){
+    $('.js-add-panel').on('click', function(){
         $(this).css('display', 'none');
-        $('#addPanelInput').css('display','block');
+        $('.js-panel-input').css('display','block');
     });
-    $('#savePanel').on('click', function() {
+    $('.js-save-panel').on('click', function() {
         var canvas = $('.board-canvas');
         var panel = $('.panel-add');
-        var panelTitle = $('#panelTitle');
+        var panelTitle = $('.js-panel-title');
         var createPanelTemplate = function(title, color) {
             return '<div class="panel-wrapped">\
                         <div class="panel" style="background-color:' + color + '">\
@@ -17,7 +17,7 @@ $(document).ready(function(){
                                 <div class="add-card-form" style="display: none">\
                                     <input type="text" name="input" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">\
                                     <input type="button" value="SAVE" class="save-button js-save-card">\
-                                    <button class="delete-button"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>\
+                                    <button class="delete-button js-delete-btn"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>\
                                 </div>\
                             </div>\
                             <ul class="card-list">\
@@ -37,8 +37,8 @@ $(document).ready(function(){
         }
 
         panel.before(createPanelTemplate(getPanelTitel(), createColor()));
-        $('#addPanelBtn').css('display', 'block');
-        $('#addPanelInput').css('display','none');
+        $('.js-add-panel').css('display', 'block');
+        $('.js-panel-input').css('display','none');
     });
 
     $('.board-canvas').on('click', '.js-add-card', function() {
@@ -74,19 +74,64 @@ $(document).ready(function(){
         panelMenu.find('.add-card-form').css('display', 'none');
     })
 
-    // $(document).on("click", ".delete-button",function(){
-    //     $(".board-make").remove()
-    //     $(".board-make-input").remove()
-    //     $(".save-button").remove()
-    //     $(".delete-button").remove()
-    //     $(".fa fa-times fa-1x").remove()
+//폴더생성취소
+     $(document).on("click", ".js-delete-panel",function(){
+         var deleteBtn = $(this);
+         var panelInput = deleteBtn.parent();
+         var panelAdd = panelInput.siblings('.js-add-panel');
+         panelInput.css('display', 'none');
+         panelAdd.css('display', 'block');
+     });
     
-    //     var addfolder = document.createElement("button")
-    //     $(addfolder).attr({
-    //         "class" : "addfolder"
-    //     })    
-    //     $(addfolder).html("Add a folder")
+//카드생성취소
+    $(document).on("click", ".js-delete-btn",function(){
+        console.log("dd");
+         var deletecardBtn = $(this);
+         var cardInput = deletecardBtn.parents('.add-card-form');
+         var cardAdd = cardInput.siblings('.js-add-card');
+         cardInput.css('display', 'none');
+         cardAdd.css('display', 'block');
+         cardAdd.parent().css('background-color', 'transparent');
+        
+     });
+    
+//폴더옮기기 도전
+// $( ".panel" ).sortable({
+//      connectWith: ".panel",
+//      handle: ".panel-title",
+//      start: function (event, ui) {
+//        ui.item.addClass('tilt');
+//      },
+//      stop: function (event, ui) {
+//        ui.item.removeClass('tilt');
+//      }
+//    });
+    
+    $(".panel-title").dblclick(function (e) {
+       e.stopPropagation();      //<-------stop the bubbling of the event here
+       var currentEle = $(this);
+       var value = $(this).html();
+       updateVal(currentEle, value);
+    });
+    
 
-    //     $(".panel").append(addfolder);
-    // });
+    function updateVal(currentEle, value) {
+//      $(currentEle).html('<input class="thVal" type="text" value="' + value + '" />');
+        var titleInput = currentEle.siblings('.thVal');
+        titleInput.val(value);
+        currentEle.css('display','none');
+        titleInput.css('display','block');
+        
+      titleInput.focus();
+      titleInput.keyup(function (event) {
+          if (event.keyCode == 13) {
+              $(currentEle).html(titleInput.val().trim());
+              titleInput.css('display','none');
+              currentEle.css('display','block');
+          }
+      });
+    }
+
+  
+
 });

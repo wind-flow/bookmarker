@@ -44,16 +44,20 @@
     </ul>
   </div>
     
+    
    <div class="board-canvas">
      <div class="panel-wrapped">
        <div class="panel" style="background-color:#ff5000">
         <h2 class="panel-title">bookMarker</h2>
+       <input class="thVal" type="text" style="display: none">
         <div class="panel-menu">
-            <button class="addfolder js-add-card">Add a folder</button>
+            <button class="addfolder js-add-card">Paste URL here</button>
             <div class="add-card-form" style="display: none">
+                <form>
                 <input type="text" name="input" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">
                 <input type="button" value="SAVE" class="save-button js-save-card">
-                <button class="delete-button"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>
+                <button class="delete-button js-delete-btn" type="button"><span class="fa fa-times fa-1x" ></span></button>
+                </form>
             </div>
         </div>
         <ul class="card-list">
@@ -103,14 +107,14 @@
         </div>
     </div>
     <div class="panel-add">
-        <button id="addPanelBtn" class="addfolder">Add a folder</button>
-        <div id="addPanelInput" class="board-make" style="display:none">
-            <input type="text" name="input" id="panelTitle" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">
-            <input type="button" value="SAVE" id="savePanel" class="save-button">
-            <button class="delete-button"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>
+        <button class="addfolder js-add-panel">Add a folder</button>
+        <div class="board-make js-panel-input" style="display:none">
+            <input type="text" name="input" class="board-make-input js-panel-title" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">
+            <input type="button" value="SAVE" class="save-button js-save-panel">
+            <button class="delete-button js-delete-panel"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>
         </div>
    </div>
-  <script type="text/javascript" src="bookmarker.js"></script>
+    </div>
 </body>
 </html>
 
