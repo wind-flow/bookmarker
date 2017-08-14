@@ -1,8 +1,102 @@
 <script>
+$(document).ready(function(){
+    $('#addPanelBtn').on('click', function(){
+        $(this).css('display', 'none');
+        $('#addPanelInput').css('display','block');
+    });
+    $('#savePanel').on('click', function() {
+        var canvas = $('.board-canvas');
+        var panel = $('.panel-add');
+        var panelTitle = $('#panelTitle');
+        var createPanelTemplate = function(title, color) {
+            return '<div class="panel-wrapped">\
+                        <div class="panel" style="background-color:' + color + '">\
+                            <h2 class="panel-title">' + title + '</h2>\
+                            <div class="panel-menu">\
+                                <button class="addfolder js-add-card">Add a folder</button>\
+                                <div class="add-card-form" style="display: none">\
+                                    <input type="text" name="input" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">\
+                                    <input type="button" value="SAVE" class="save-button js-save-card">\
+                                    <button class="delete-button"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>\
+                                </div>\
+                            </div>\
+                            <ul class="card-list">\
+                            </ul>\
+                        </div>\
+                    </div>'
+        }
+        var createColor = function() {
+            var colors = ['#ff5000', '#008000', '#f00000', '#333', '#fff000']
+            var rand = Math.floor(Math.random() * colors.length);
+            return colors[rand];
+        }
+        var getPanelTitel = function() {
+            var title = panelTitle.val();
+            panelTitle.val('');
+            return title;
+        }
+
+        panel.before(createPanelTemplate(getPanelTitel(), createColor()));
+        $('#addPanelBtn').css('display', 'block');
+        $('#addPanelInput').css('display','none');
+    });
+
+    $('.board-canvas').on('click', '.js-add-card', function() {
+        var cardBtn = $(this);
+        var panelMenu = cardBtn.parent();
+        var cardInput = panelMenu.find('.add-card-form');
+        panelMenu.css('background-color', '#eee');
+        cardBtn.css('display', 'none');
+        cardInput.css('display', 'block');
+    });
+
+    $('.board-canvas').on('click', '.js-save-card', function() {
+        var saveBtn = $(this);
+        var panelMenu = saveBtn.parents('.panel-menu')
+        var cardList = panelMenu.siblings('.card-list');
+        var cardInput = saveBtn.siblings('.board-make-input');
+        var getCardLink = function() {
+            var title = cardInput.val();
+            cardInput.val('');
+            return title;
+        }
+        var createCardTemplate = function(link) {
+            return '<li class="card-item">\
+                        <a class="card-link" href="' + link + '" target="_black">\
+                            <img class="card-thumbnail" src="#" alt="#">\
+                            <p class="card-txt">' + link + '</p>\
+                        </a>\
+                    </li>'
+        }
+        cardList.prepend(createCardTemplate(getCardLink()));
+        panelMenu.css('background-color', 'transparent');
+        panelMenu.find('.js-add-card').css('display', 'block');
+        panelMenu.find('.add-card-form').css('display', 'none');
+    })
+
+    // $(document).on("click", ".delete-button",function(){
+    //     $(".board-make").remove()
+    //     $(".board-make-input").remove()
+    //     $(".save-button").remove()
+    //     $(".delete-button").remove()
+    //     $(".fa fa-times fa-1x").remove()
+
+    //     var addfolder = document.createElement("button")
+    //     $(addfolder).attr({
+    //         "class" : "addfolder"
+    //     })
+    //     $(addfolder).html("Add a folder")
+
+    //     $(".panel").append(addfolder);
+    // });
+});
+</script>
+
+<!-- <script>
+
 $(document).ready((function(){
     $("#addlist").click(function(){
       var folder = document.createElement("div");  // Create with DOM
-
       $(folder).attr("class", "portlet")
       $(folder).attr("name", "test")
       $(folder).css("border", "1px solid")
@@ -15,66 +109,54 @@ $(document).ready((function(){
         "bookmkfolder[bookmkfoldercolor]" : "red"
       },
           function(data, status){
-              // alert("Data: " + data + "\nStatus: " + status);
+              alert("Data: " + data + "\nStatus: " + status);
               $(".item").append(folder);         // Append the new elements
-          });
+      });
       // $(".item").append(folder);         // Append the new elements
     })
 }))
-</script>
+</script> -->
 
-<h1>포스트</h1>
-<div class ="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class=item>
-        <div class="portlet">
-          ASDF
-        </div>
-        <input type="button" id="addlist" value="add list...."/>
-      </div>
-
-      <% @posts.each do |post| %>
-        <ul>
-          <%= "#{post.id}번 글입니다" %>
-          <li>
-              <%= link_to post.title, post %>
-              <%= post.content %>
-              <% if user_signed_in? %>
-              <%= link_to icon('pencil'), edit_post_path(post) if post.updatable_by? current_user %>&nbsp;
-              <%= link_to icon('trash'), post, method: :delete, data: { confirm: 'Are you sure?' } if post.deletable_by? current_user %>
-              <% end %>
-          </li>
-        </ul>
-      <% end %>
-    </div>
+<header class="header">
+  <a href="#"><h1 class="brand">BOOKMARKER</h1></a>
+  <div class="header-search">
+    <input class="header-search-input" type="text" name="search" autocomplete="off" autocorrect="off" spellcheck="false" >
+    <span class="header-search-icon fa fa-search fa-lg" style="color:white" aria-hidden="true"></span>
   </div>
+  <nav class="gnb">
+    <h2 class="sr-only">Menu</h2>
+    <ul class="gnb-menu">
+      <li><button type="button" class="btn btn-default" href="#"><i class="fa fa-bell fa-lg" style="color:white" aria-hidden="true"></i></button></li>
+      <li><button type="button" class="btn btn-default" href="#"><i class="fa fa-cog fa-lg" style="color:white" aria-hidden="true"></i></button></li>
+      <li><button type="button" class="btn btn-default" href="#"><i class="fa fa-user fa-lg" style="color:white" aria-hidden="true"></i></button></li>
+
+<!--        <li><a href="#" class="btn-link">CTA</a></li>-->
+    </ul>
+  </nav>
+</header>
+<div class="white-bar">
+  <ul class="bar-menu">
+    <li class="active"><a href="#">멋쟁이 사자처럼</a></li>
+    <li class="active"><a href="#">쇼핑</a></li>
+    <li class="active"><a href="#">디자인</a></li>
+    <li class="active"><a href="#">여행</a></li>
+    <li class="active"><a href="#">멋쟁이 사자처럼</a></li>
+    <li class="active"><a href="#">쇼핑</a></li>
+    <li class="active"><a href="#">디자인</a></li>
+    <li class="active"><a href="#">여행</a></li>
+  </ul>
 </div>
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to post.title, post %></td>
-        <td><%= post.content %></td>
-        <td>
-          <% if user_signed_in? %>
-          <%= link_to icon('pencil'), edit_post_path(post) if post.updatable_by? current_user %>&nbsp;
-          <%= link_to icon('trash'), post, method: :delete, data: { confirm: 'Are you sure?' } if post.deletable_by? current_user %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
-
-<br>
-
-<%= link_to '새 글 쓰기', new_post_path %>
+ <div class="board-canvas">
+  <div class="panel-add">
+      <button id="addPanelBtn" class="addfolder">Add a folder</button>
+      <div id="addPanelInput" class="board-make" style="display:none">
+          <form action="bookmkfolder/createfolder" method="get" data-remote="true">
+            <input type="text" name="bookmkfolder[bookmkfoldertitle]" id="panelTitle" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">
+            <input type="submit" value="SAVE" id="savePanel" class="save-button">
+            <button class="delete-button"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>
+          </form>
+      </div>
+ </div>
+</div>
+</body>

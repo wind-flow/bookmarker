@@ -1,23 +1,35 @@
 class BookmkfolderController < ApplicationController
 
+  def index
+    @bookmkfolders = Bookmkfolder.all
+  end
+
+  def show
+  end
+
   def createfolder
-    @bookmkfolders = Bookmkfolder.new#(bookmkfolder_params)
-    # @bookmkfolders.memid = current_user
-    @bookmkfolders.bookmkfoldertitle = "ASD"
-    @bookmkfolders.save
-    # respond_to do |format|
-    #   if @bookmkfolders.save
-    #     format.html { redirect_to @bookmkfolders, notice: 'Post was successfully created.' }
-    #     format.json { render :show, status: :created, location: @bookmkfolders }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @bookmkfolders.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    @bookmkfolder = Bookmkfolder.new(bookmkfolder_params)
+    @bookmkfolder.bookmkfoldertitle = params[:bookmkfolder[bookmkfoldertitle]]
+
+    @bookmkfolder.save
+
+    if @bookmkfolder.save
+    respond_to do |format|
+      format.js
+    end
+
+    else
+
+    end
   end
 
   private
+
+  def set_post
+    @bookmkfolder = Bookmkfolder.find(params[:id])
+  end
+
   def bookmkfolder_params
-    params.require(:bookmkfolder).permit(:bookmkfoldertitle, :bookmkfoldercolor)
+    params.require(:bookmkfolder).permit(:bookmkfoldertitle)
   end
 end
