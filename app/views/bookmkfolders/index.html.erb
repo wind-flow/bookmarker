@@ -33,13 +33,14 @@ $(document).ready(function(){
             var rand = Math.floor(Math.random() * colors.length);
             return colors[rand];
         }
-        var getPanelTitel = function() {
+
+        var getPanelTitle = function() {
             var title = panelTitle.val();
             panelTitle.val('');
             return title;
         }
 
-        panel.before(createPanelTemplate(getPanelTitel(), createColor()));
+        panel.before(createPanelTemplate(getPanelTitle(), createColor()));
         $('#addPanelBtn').css('display', 'block');
         $('#addPanelInput').css('display','none');
     });
@@ -95,80 +96,27 @@ $(document).ready(function(){
 });
 </script>
 
-<!-- <script>
-
-$(document).ready((function(){
-    $("#addlist").click(function(){
-      var folder = document.createElement("div");  // Create with DOM
-      $(folder).attr("class", "portlet")
-      $(folder).attr("name", "test")
-      $(folder).css("border", "1px solid")
-      $(folder).css("border-color", "red")
-      $(folder).html("ASDFFF")
-
-      $.post("bookmkfolder/createfolder",
-      {
-        "bookmkfolder[bookmkfoldertitle]" : "test",
-        "bookmkfolder[bookmkfoldercolor]" : "red"
-      },
-          function(data, status){
-              alert("Data: " + data + "\nStatus: " + status);
-              $(".item").append(folder);         // Append the new elements
-      });
-      // $(".item").append(folder);         // Append the new elements
-    })
-}))
-</script> -->
-
-<header class="header">
-  <a href="#"><h1 class="brand">BOOKMARKER</h1></a>
-  <div class="header-search">
-    <input class="header-search-input" type="text" name="search" autocomplete="off" autocorrect="off" spellcheck="false" >
-    <span class="header-search-icon fa fa-search fa-lg" style="color:white" aria-hidden="true"></span>
-  </div>
-  <nav class="gnb">
-    <h2 class="sr-only">Menu</h2>
-    <ul class="gnb-menu">
-      <li><button type="button" class="btn btn-default" href="#"><i class="fa fa-bell fa-lg" style="color:white" aria-hidden="true"></i></button></li>
-      <li><button type="button" class="btn btn-default" href="#"><i class="fa fa-cog fa-lg" style="color:white" aria-hidden="true"></i></button></li>
-      <li><button type="button" class="btn btn-default" href="#"><i class="fa fa-user fa-lg" style="color:white" aria-hidden="true"></i></button></li>
-
-<!--        <li><a href="#" class="btn-link">CTA</a></li>-->
-    </ul>
-  </nav>
-</header>
-<div class="white-bar">
-  <ul class="bar-menu">
-    <li class="active"><a href="#">멋쟁이사자처럼</a></li>
-    <li class="active"><a href="#">?디자인</a></li>
-    <li class="active"><a href="#">쇼핑</a></li>
-    <li class="active"><a href="#">멋쟁이사자처럼</a></li>
-    <li class="active"><a href="#">디자인</a></li>
-    <li class="active"><a href="#">쇼핑</a></li>
-    <li class="active"><a href="#">디자인</a></li>
-    <li class="active"><a href="#">쇼핑</a></li>
-  </ul>
-</div>
-
-
-<%= form_for(@bookmkfolder, remote: true) do |f| %>
-<% end %>
+<!-- 북마크 폴더 만드는 뷰 -->
  <div class="board-canvas">
   <div class="panel-add">
-      <button id="addPanelBtn" class="addfolder">Add a folder</button>
-      <%= button_to "Add a folder"%>
+    <%= button_tag "Add a folder", type: 'button', class: 'addfolder', id: 'addPanelBtn' %>
       <div id="addPanelInput" class="board-make" style="display:none">
-          <form action="bookmkfolder/createfolder" method="get" data-remote="true">
-            <input type="text" name="bookmkfolder[bookmkfoldertitle]" id="panelTitle" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">
-            <input type="submit" value="SAVE" id="savePanel" class="save-button">
-            <button class="delete-button"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>
-          </form>
+          <%= simple_form_for @bookmkfolder, remote: true, url: {action: "createfolder"} do |f| %>
+          <%= f.input_field :bookmkfoldertitle, class: 'board-make-input', :autocomplete => :off, :autocorrect => :off, :spellcheck => false, placeholder: 'Add a folder' %>
+          <%= f.button :submit, "Save", id: 'savePanel', class: 'save-button' %>
+          <%= button_tag "", type: 'button' , class: 'delete-button' %>
+          <!-- <%= f.input :email, placeholder: 'Email', label: false, required: true, autofocus: true, input_html: { class:  'input' } %> -->
+          <!-- <form action="bookmkfolders/createfolder" method="post" data-remote="true"> -->
+            <!-- <input type="text" name="bookmkfolder[bookmkfoldertitle]" id="panelTitle" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder"> -->
+            <!-- <input type="submit" value="SAVE" id="savePanel" class="save-button"> -->
+            <!-- <button class="delete-button"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button> -->
+          <!-- </form> -->
+          <% end %>
       </div>
  </div>
 </div>
 
 
-</body>
 
 <!-- <script>
 $(document).ready((function(){
@@ -226,8 +174,3 @@ $(document).ready((function(){
     </div>
   </div>
 </div> -->
-
-<br>
-
-
-<%= link_to '새 폴더 추가', new_bookmkfolder_path %>

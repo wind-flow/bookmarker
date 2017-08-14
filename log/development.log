@@ -23052,3 +23052,912 @@ Processing by BookmkfoldersController#index as HTML
 Completed 200 OK in 876ms (Views: 799.7ms | ActiveRecord: 3.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-14 20:27:57 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BookmkfoldersController#index as HTML
+Completed 401 Unauthorized in 54ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-14 20:28:18 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (156.1ms)
+Completed 200 OK in 2467ms (Views: 2433.6ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-14 20:28:28 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qsVnbdfnRm+O/OWi1X5A4vj16feF6rGh8EpZFrWCZCL74FmmM2+lrhQZdZRwGd1G1fdP6y1Z194yg97EMsO4bg==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"로그인"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-08-14 11:28:28.663691"], ["last_sign_in_at", "2017-08-11 13:22:17.540262"], ["sign_in_count", 3], ["updated_at", "2017-08-14 11:28:28.669712"], ["id", 1]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1224ms (ActiveRecord: 19.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 20:28:29 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (1.0ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (184.7ms)
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (166.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 1251ms (Views: 1119.0ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 20:31:16 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (1.0ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (103.1ms)
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (17.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.0ms)
+Completed 200 OK in 8309ms (Views: 8151.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 20:31:38 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (1.0ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (67.2ms)
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (40.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 3038ms (Views: 2966.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/bookmkfolder/createfolder?bookmkfolder%5Bbookmkfoldertitle%5D=" for 127.0.0.1 at 2017-08-14 20:31:56 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/bookmkfolder/createfolder"):
+  
+actionpack (5.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.5) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (803.9ms)
+Started GET "/bookmkfolder/createfolder?bookmkfolder%5Bbookmkfoldertitle%5D=" for 127.0.0.1 at 2017-08-14 20:31:57 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/bookmkfolder/createfolder"):
+  
+actionpack (5.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.5) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (853.5ms)
+Started GET "/bookmkfolder/createfolder?bookmkfolder%5Bbookmkfoldertitle%5D=" for 127.0.0.1 at 2017-08-14 20:31:58 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/bookmkfolder/createfolder"):
+  
+actionpack (5.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.5) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (1200.1ms)
+Started GET "/" for 127.0.0.1 at 2017-08-14 20:35:34 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.5ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (84.8ms)
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (17.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 717ms (Views: 655.0ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/?class=addfolder&id=addPanelBtn" for 127.0.0.1 at 2017-08-14 20:35:37 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+actionpack (5.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.5) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [32 times] (21.5ms)
+  Rendered collection of C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (7.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (23.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (5387.3ms)
+Started POST "/?class=addfolder&id=addPanelBtn" for 127.0.0.1 at 2017-08-14 20:37:37 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+actionpack (5.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.5) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [32 times] (15.0ms)
+  Rendered collection of C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (12.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+Started GET "/" for 127.0.0.1 at 2017-08-14 20:37:43 +0900
+Processing by BookmkfoldersController#index as HTML
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (4336.8ms)
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.5ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (1572.9ms)
+  [1m[36mRole Load (0.5ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (18.5ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 6890ms (Views: 6807.4ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/?class=addfolder&id=addPanelBtn" for 127.0.0.1 at 2017-08-14 20:41:09 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+actionpack (5.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.5) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/bookmkfolders/createfolder?bookmkfolder%5Bbookmkfoldertitle%5D=" for 127.0.0.1 at 2017-08-14 20:41:11 +0900
+Processing by BookmkfoldersController#show as JS
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Parameters: {"bookmkfolder"=>{"bookmkfoldertitle"=>""}, "id"=>"createfolder"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookmkfolder Load (0.0ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+Completed 404 Not Found in 29ms (ActiveRecord: 1.0ms)
+
+
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  
+ActiveRecord::RecordNotFound (Couldn't find Bookmkfolder with 'id'=createfolder):
+  
+app/controllers/bookmkfolders_controller.rb:74:in `set_bookmkfolder'
+  Rendered collection of C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [32 times] (14.0ms)
+  Rendered collection of C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (8.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (4515.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.text.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.text.erb (1.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (2.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (3383.1ms)
+Started POST "/?class=addfolder&id=addPanelBtn" for 127.0.0.1 at 2017-08-14 20:41:56 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+actionpack (5.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.5) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+Started GET "/" for 127.0.0.1 at 2017-08-14 20:41:59 +0900
+  Rendered collection of C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [32 times] (17.0ms)
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb [20 times] (48.1ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.0ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  [1m[36mCACHE (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (4962.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (2936.4ms)
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (14.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 10242ms (Views: 10169.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 20:46:30 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (1.0ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (47.6ms)
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (12.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 712ms (Views: 642.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 20:50:47 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (1.0ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (63.0ms)
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (53.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.0ms)
+Completed 200 OK in 855ms (Views: 702.3ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 20:50:55 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.0ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (43.0ms)
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (9.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 681ms (Views: 631.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 20:51:40 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (1.0ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (76.1ms)
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (11.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 816ms (Views: 681.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/bookmkfolders" for 127.0.0.1 at 2017-08-14 20:51:43 +0900
+Started GET "/" for 127.0.0.1 at 2017-08-14 20:51:49 +0900
+  
+Processing by BookmkfoldersController#index as HTML
+AbstractController::ActionNotFound (The action 'create' could not be found for BookmkfoldersController):
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  
+actionpack (5.0.5) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.5) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.5) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.5) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.5) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.5) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.5) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.5) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.5) lib/action_dispatch/routing/route_set.rb:727:in `call'
+omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.5) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.5) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.5) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.5) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.5) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.5) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.0ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (52.7ms)
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (9.1ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 780ms (Views: 618.5ms | ActiveRecord: 2.0ms)
+
+
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.text.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.text.erb (0.5ms)
+Started POST "/bookmkfolders" for 127.0.0.1 at 2017-08-14 20:52:35 +0900
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for BookmkfoldersController):
+  
+actionpack (5.0.5) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.5) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.5) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.5) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.5) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.5) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.5) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.5) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.5) lib/action_dispatch/routing/route_set.rb:727:in `call'
+omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.5) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.5) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.5) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.5) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.5) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.5) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.text.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.text.erb (1.0ms)
+Started GET "/" for 127.0.0.1 at 2017-08-14 20:53:25 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (1.0ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (85.3ms)
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (9.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 884ms (Views: 805.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/bookmkfolders" for 127.0.0.1 at 2017-08-14 20:53:34 +0900
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for BookmkfoldersController):
+  
+actionpack (5.0.5) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.5) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.5) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.5) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.5) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.5) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.5) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.5) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.5) lib/action_dispatch/routing/route_set.rb:727:in `call'
+omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.5) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.5) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.5) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.5) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.5) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.5) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.0ms)
+Started POST "/bookmkfolders" for 127.0.0.1 at 2017-08-14 20:54:05 +0900
+  
+Started GET "/" for 127.0.0.1 at 2017-08-14 20:54:10 +0900
+AbstractController::ActionNotFound (The action 'create' could not be found for BookmkfoldersController):
+Processing by BookmkfoldersController#index as HTML
+  
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+actionpack (5.0.5) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.5) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.5) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.5) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.5) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.5) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.5) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.5) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.5) lib/action_dispatch/routing/route_set.rb:727:in `call'
+omniauth (1.6.1) lib/omniauth/strategy.rb:189:in `call!'
+omniauth (1.6.1) lib/omniauth/strategy.rb:167:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.5) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.5) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.5) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.5) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.5) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.5) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.5) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.0ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (55.1ms)
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (10.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 837ms (Views: 631.6ms | ActiveRecord: 1.0ms)
+
+
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.0ms)
+Started GET "/" for 127.0.0.1 at 2017-08-14 21:16:30 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  Rendered bookmkfolders/index.html.erb within layouts/application (42.1ms)
+Completed 500 Internal Server Error in 471ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    157:   <div class="panel-add">
+    158:     <%= button_tag "Add a folder", type: 'button', class: 'addfolder', id: 'addPanelBtn' %>
+    159:       <div id="addPanelInput" class="board-make" style="display:none">
+    160:           <%= form_for(@bookmkfolder, remote: true) do |f| %>
+    161:           <!-- <form action="bookmkfolders/createfolder" method="post" data-remote="true"> -->
+    162:             <input type="text" name="bookmkfolder[bookmkfoldertitle]" id="panelTitle" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">
+    163:             <input type="submit" value="SAVE" id="savePanel" class="save-button">
+  
+app/views/bookmkfolders/index.html.erb:160:in `_app_views_bookmkfolders_index_html_erb___1704330820_102544800'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (2615.3ms)
+Started GET "/" for 127.0.0.1 at 2017-08-14 21:17:01 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.0ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (74.7ms)
+Completed 500 Internal Server Error in 439ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Bookmkfolder::ActiveRecord_Relation:0x00000007b41048>):
+    157:   <div class="panel-add">
+    158:     <%= button_tag "Add a folder", type: 'button', class: 'addfolder', id: 'addPanelBtn' %>
+    159:       <div id="addPanelInput" class="board-make" style="display:none">
+    160:           <%= form_for(@bookmkfolders, remote: true) do |f| %>
+    161:           <!-- <form action="bookmkfolders/createfolder" method="post" data-remote="true"> -->
+    162:             <input type="text" name="bookmkfolder[bookmkfoldertitle]" id="panelTitle" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">
+    163:             <input type="submit" value="SAVE" id="savePanel" class="save-button">
+  
+app/views/bookmkfolders/index.html.erb:160:in `_app_views_bookmkfolders_index_html_erb___1704330820_143472640'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (2543.1ms)
+Started GET "/" for 127.0.0.1 at 2017-08-14 21:17:21 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  Rendered bookmkfolders/index.html.erb within layouts/application (50.1ms)
+Completed 500 Internal Server Error in 459ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    157:   <div class="panel-add">
+    158:     <%= button_tag "Add a folder", type: 'button', class: 'addfolder', id: 'addPanelBtn' %>
+    159:       <div id="addPanelInput" class="board-make" style="display:none">
+    160:           <%= form_for(@bookmkfolder, remote: true) do |f| %>
+    161:           <!-- <form action="bookmkfolders/createfolder" method="post" data-remote="true"> -->
+    162:             <input type="text" name="bookmkfolder[bookmkfoldertitle]" id="panelTitle" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">
+    163:             <input type="submit" value="SAVE" id="savePanel" class="save-button">
+  
+app/views/bookmkfolders/index.html.erb:160:in `_app_views_bookmkfolders_index_html_erb___1704330820_153241080'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (2616.2ms)
+Started GET "/" for 127.0.0.1 at 2017-08-14 21:17:59 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  Rendered bookmkfolders/index.html.erb within layouts/application (43.0ms)
+Completed 500 Internal Server Error in 553ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    157:   <div class="panel-add">
+    158:     <%= button_tag "Add a folder", type: 'button', class: 'addfolder', id: 'addPanelBtn' %>
+    159:       <div id="addPanelInput" class="board-make" style="display:none">
+    160:           <%= form_for(@createfolder, remote: true) do |f| %>
+    161:           <!-- <form action="bookmkfolders/createfolder" method="post" data-remote="true"> -->
+    162:             <input type="text" name="bookmkfolder[bookmkfoldertitle]" id="panelTitle" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">
+    163:             <input type="submit" value="SAVE" id="savePanel" class="save-button">
+  
+app/views/bookmkfolders/index.html.erb:160:in `_app_views_bookmkfolders_index_html_erb___1704330820_132872960'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (2837.3ms)
+Started GET "/rails/info" for 127.0.0.1 at 2017-08-14 21:19:54 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::InfoController#index as HTML
+  Parameters: {"internal"=>true}
+Redirected to http://localhost:3000/rails/info/routes
+Completed 302 Found in 45ms (ActiveRecord: 0.0ms)
+
+

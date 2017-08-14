@@ -14,24 +14,23 @@
   <body>
   <!-- log in 되었을 시 화면 -->
   <% if user_signed_in? %>
+   <%= render 'layouts/header' %>
     <!-- Header -->
-    <%= render "layouts/header" %>
     <!--Posts  -->
-    <div class="container">
+    <!-- <div class="container">
       <%= render "devise/shared/flash_messages", flash: flash %>
-    </div>
+    </div> -->
     <div class="container">
       <%= yield %>
     </div>
     <!-- 여기는 log in -->
   <% else %>
-
-  <!-- 오른쪽에 들어갈 로그인 -->
-  <div class= "login container">
+  <!-- 중앙에 들어갈 로그인 -->
+  <div class= "login-container">
       <%= yield %>
   </div>
 
   <% end %>
-  
+
   </body>
 </html>
