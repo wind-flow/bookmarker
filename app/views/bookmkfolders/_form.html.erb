@@ -1,0 +1,17 @@
+<%= simple_form_for(@bookmkfolder) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-md-12">
+    <%= f.input :bookmkfoldertitle %>
+
+    <%= f.input :bookmkfoldercolor %>
+      </div>
+  </div>
+</div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

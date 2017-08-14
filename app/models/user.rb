@@ -6,7 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :omniauthable, :omniauth_providers => [:facebook]
-  has_many :posts, dependent: :destroy
+  has_many :bookmkfolders, dependent: :destroy
+
 
   after_create :set_default_role, if: Proc.new { User.count > 1}
   private

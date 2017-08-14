@@ -10,29 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805112743) do
+ActiveRecord::Schema.define(version: 20170810163118) do
 
   create_table "bookmkfolders", force: :cascade do |t|
-    t.string   "bookmkfolderid"
     t.string   "bookmkfoldertitle"
     t.string   "bookmkfoldercolor"
-    t.integer  "bookmkfolderseq"
-    t.integer  "bookmkfolderclick"
     t.integer  "bookmkid_id"
     t.integer  "email_id"
+    t.integer  "user_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.index ["bookmkid_id"], name: "index_bookmkfolders_on_bookmkid_id"
     t.index ["email_id"], name: "index_bookmkfolders_on_email_id"
+    t.index ["user_id"], name: "index_bookmkfolders_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|

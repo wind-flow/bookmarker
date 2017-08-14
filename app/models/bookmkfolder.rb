@@ -1,4 +1,8 @@
 class Bookmkfolder < ApplicationRecord
-  belongs_to :bookmkid
-  belongs_to :email
+  resourcify
+  include Authority::Abilities
+  belongs_to :user
+
+  belongs_to :bookmkid, required: false
+  belongs_to :email, required: false
 end

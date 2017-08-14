@@ -1,0 +1,12 @@
+<h1>Editing Bookmkfolder</h1>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= time_ago_in_words(@bookmkfolder.created_at) %> ago
+  </div>
+</div>
+
+<%= render 'form', bookmkfolder: @bookmkfolder %>
+
+<%= link_to 'Show', @bookmkfolder, class: 'btn btn-default' %>
+<%= link_to 'Back', bookmkfolders_path, class: 'btn btn-default' %>
