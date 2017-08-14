@@ -5,7 +5,7 @@
     <div class="spanColor" style="height:41px;"></div>
     <%= f.input :email, placeholder: 'Email', label: false, required: true, autofocus: true, input_html: { class:  'input' } %>
     <%= f.input :password, placeholder: 'Password', label: false, required: true, input_html: {:class => "input"} %>
-    <%= f.input :remember_me,label_html: {:class => "rem_box"}, as: :boolean if devise_mapping.rememberable? %>
+    <%= f.input :remember_me, class: "rem_box", as: :boolean if devise_mapping.rememberable? %>
   </div>
 
   <div class="form-actions">

@@ -25701,3 +25701,342 @@ Processing by BookmkfoldersController#index as HTML
 Completed 200 OK in 861ms (Views: 807.6ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-14 23:19:19 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.5ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (241.4ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 6661ms (Views: 6531.9ms | ActiveRecord: 6.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-14 23:19:29 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"N+EXqdLz9a7/cBx0aqcb9jV/sjjYq9tPmGel54ktdr9mExcCyo0ssanNZKShNRite/Ln5CZyZKHpKbFVU+V37Q=="}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 23:19:29 +0900
+Processing by BookmkfoldersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-14 23:19:29 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (50.1ms)
+Completed 200 OK in 588ms (Views: 586.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-14 23:19:40 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ddmx51LqtOk27jPFNnBePecwHF6ooPCiwqMeBKvspnBg/nwJRY3cxtjhZv0c8bT+58AIDbbDanop2Va71TqOPg==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"로그인"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-08-14 14:19:40.795178"], ["last_sign_in_at", "2017-08-14 13:46:27.694128"], ["sign_in_count", 7], ["updated_at", "2017-08-14 14:19:40.798683"], ["id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 813ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 23:19:41 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.0ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmkfolders/index.html.erb within layouts/application (157.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 676ms (Views: 630.2ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-08-14 23:19:45 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WmTjVSZclcxUcCcpdCP+BR4HALxNayJNDrQm+iuIoXKFZx2UkbIAkRrRnNU3yuQIzbmqgkWyN0YbQ6+aInJGsw=="}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 23:19:45 +0900
+Processing by BookmkfoldersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-14 23:19:45 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (54.0ms)
+Completed 200 OK in 582ms (Views: 579.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-08-14 23:20:10 +0900
+Processing by Admin::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 1238ms (Views: 1236.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-08-14 23:20:24 +0900
+Processing by Admin::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MxqCxJ6w31G2RYIWYPGdvAFwrNN3AV2t2/NxMlCYo5mcTMxpPd3IaDgF+DZi+gFpD8nyphA5HR6JRWzvNXRCAQ==", "user"=>{"username"=>"testtt", "email"=>"test1@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"회원가입"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test1@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "encrypted_password", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "test1@gmail.com"], ["username", "testtt"], ["encrypted_password", "$2a$11$31qxbhV/EuZGo2tTv1NrUeb0kBJD0iucIehCoCkgYRoAGex0OhLTS"], ["confirmation_token", "zXb37zRdnxw5kr1QGdYn"], ["confirmation_sent_at", "2017-08-14 14:20:24.677621"], ["created_at", "2017-08-14 14:20:24.677621"], ["updated_at", "2017-08-14 14:20:24.677621"]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mRole Load (1.0ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "user"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "user"], ["created_at", "2017-08-14 14:20:24.762693"], ["updated_at", "2017-08-14 14:20:24.762693"]]
+  [1m[36mRole Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND "roles"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "roles".id FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."id" = 1[0m
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES (?, ?)[0m  [["user_id", 2], ["role_id", 1]]
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (2.0ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 1636.4ms
+Sent mail to test1@gmail.com (675.6ms)
+Date: Mon, 14 Aug 2017 23:20:28 +0900
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: test1@gmail.com
+Message-ID: <5991b1ac5cf3c_561439410e4305e1@HUHSEUNG.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome test1@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=zXb37zRdnxw5kr1QGdYn">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 5993ms (ActiveRecord: 23.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-14 23:20:30 +0900
+Processing by BookmkfoldersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-14 23:20:30 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (81.6ms)
+Completed 200 OK in 770ms (Views: 768.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=zXb37zRdnxw5kr1QGdYn" for 127.0.0.1 at 2017-08-14 23:20:31 +0900
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"zXb37zRdnxw5kr1QGdYn"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "zXb37zRdnxw5kr1QGdYn"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2017-08-14 14:20:31.952524"], ["updated_at", "2017-08-14 14:20:31.955525"], ["id", 2]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 59ms (ActiveRecord: 16.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-14 23:20:32 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (93.6ms)
+Completed 200 OK in 978ms (Views: 976.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-14 23:31:23 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (61.1ms)
+Completed 200 OK in 745ms (Views: 742.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-14 23:33:02 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (64.1ms)
+Completed 200 OK in 737ms (Views: 734.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-14 23:33:56 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (82.1ms)
+Completed 200 OK in 4844ms (Views: 4842.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-14 23:38:07 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (63.9ms)
+Completed 200 OK in 4356ms (Views: 4353.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-14 23:38:54 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 4540ms (Views: 4539.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-15 00:03:06 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BookmkfoldersController#index as HTML
+Completed 401 Unauthorized in 53ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-15 00:03:26 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (154.1ms)
+Completed 200 OK in 8626ms (Views: 8594.1ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-15 00:04:18 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yNxWjAI4Z0YewGugSh1iRRQntMc68uTzck7tNCSNaSc5MIfHmMoRqmVgnAGfRU6SaYHFFzgUYRAPEpTrtydmhA==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"로그인"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 329ms (ActiveRecord: 1.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yNxWjAI4Z0YewGugSh1iRRQntMc68uTzck7tNCSNaSc5MIfHmMoRqmVgnAGfRU6SaYHFFzgUYRAPEpTrtydmhA==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"로그인"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (71.0ms)
+Completed 200 OK in 995ms (Views: 752.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-15 00:04:24 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/zva1vNCa+IudZyak8hvp/Jw98NtTarnKul5wvNXNhoO1wudabAdDlXVaztGkENwj9aGE2+rLwRXtQAdYP05uQ==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"로그인"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-08-14 15:04:24.366362"], ["last_sign_in_at", "2017-08-14 14:19:40.795178"], ["sign_in_count", 8], ["updated_at", "2017-08-14 15:04:24.371366"], ["id", 1]]
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1169ms (ActiveRecord: 16.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-15 00:04:25 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  Rendered bookmkfolders/index.html.erb within layouts/application (61.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.0ms)
+Completed 200 OK in 828ms (Views: 713.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-15 00:04:26 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  Rendered bookmkfolders/index.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.0ms)
+Completed 200 OK in 750ms (Views: 678.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-15 00:05:02 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  Rendered bookmkfolders/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 685ms (Views: 622.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-15 00:05:03 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  Rendered bookmkfolders/index.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.0ms)
+Completed 200 OK in 948ms (Views: 870.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-15 00:18:16 +0900
+  
+LoadError (cannot load such file -- link_thumbnailer):
+  
+app/controllers/bookmkfolders_controller.rb:3:in `<class:BookmkfoldersController>'
+app/controllers/bookmkfolders_controller.rb:1:in `<top (required)>'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2819.5ms)
+Started GET "/" for 127.0.0.1 at 2017-08-15 00:18:42 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  Rendered bookmkfolders/index.html.erb within layouts/application (21.5ms)

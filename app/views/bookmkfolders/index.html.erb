@@ -1,101 +1,3 @@
-
-
-
-<script>
-$(document).ready(function(){
-    $('#addPanelBtn').on('click', function(){
-        $(this).css('display', 'none');
-        $('#addPanelInput').css('display','block');
-    });
-    $('#savePanel').on('click', function() {
-        var canvas = $('.board-canvas');
-        var panel = $('.panel-add');
-        var panelTitle = $('#panelTitle');
-        var createPanelTemplate = function(title, color) {
-            return '<div class="panel-wrapped">\
-                        <div class="panel" style="background-color:' + color + '">\
-                            <h2 class="panel-title">' + title + '</h2>\
-                            <div class="panel-menu">\
-                                <button class="addfolder js-add-card">Add a folder</button>\
-                                <div class="add-card-form" style="display: none">\
-                                    <input type="text" name="input" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">\
-                                    <input type="button" value="SAVE" class="save-button js-save-card">\
-                                    <button class="delete-button"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>\
-                                </div>\
-                            </div>\
-                            <ul class="card-list">\
-                            </ul>\
-                        </div>\
-                    </div>'
-        }
-        var createColor = function() {
-            var colors = ['#ff5000', '#008000', '#f00000', '#333', '#fff000']
-            var rand = Math.floor(Math.random() * colors.length);
-            return colors[rand];
-        }
-
-        var getPanelTitle = function() {
-            var title = panelTitle.val();
-            panelTitle.val('');
-            return title;
-        }
-
-        panel.before(createPanelTemplate(getPanelTitle(), createColor()));
-        $('#addPanelBtn').css('display', 'block');
-        $('#addPanelInput').css('display','none');
-    });
-
-    $('.board-canvas').on('click', '.js-add-card', function() {
-        var cardBtn = $(this);
-        var panelMenu = cardBtn.parent();
-        var cardInput = panelMenu.find('.add-card-form');
-        panelMenu.css('background-color', '#eee');
-        cardBtn.css('display', 'none');
-        cardInput.css('display', 'block');
-    });
-
-    $('.board-canvas').on('click', '.js-save-card', function() {
-        var saveBtn = $(this);
-        var panelMenu = saveBtn.parents('.panel-menu')
-        var cardList = panelMenu.siblings('.card-list');
-        var cardInput = saveBtn.siblings('.board-make-input');
-        var getCardLink = function() {
-            var title = cardInput.val();
-            cardInput.val('');
-            return title;
-        }
-        var createCardTemplate = function(link) {
-            return '<li class="card-item">\
-                        <a class="card-link" href="' + link + '" target="_black">\
-                            <img class="card-thumbnail" src="#" alt="#">\
-                            <p class="card-txt">' + link + '</p>\
-                        </a>\
-                    </li>'
-        }
-        cardList.prepend(createCardTemplate(getCardLink()));
-        panelMenu.css('background-color', 'transparent');
-        panelMenu.find('.js-add-card').css('display', 'block');
-        panelMenu.find('.add-card-form').css('display', 'none');
-    })
-
-    // $(document).on("click", ".delete-button",function(){
-    //     $(".board-make").remove()
-    //     $(".board-make-input").remove()
-    //     $(".save-button").remove()
-    //     $(".delete-button").remove()
-    //     $(".fa fa-times fa-1x").remove()
-
-    //     var addfolder = document.createElement("button")
-    //     $(addfolder).attr({
-    //         "class" : "addfolder"
-    //     })
-    //     $(addfolder).html("Add a folder")
-
-    //     $(".panel").append(addfolder);
-    // });
-});
-</script>
-
 <!-- 북마크 폴더 만드는 뷰 -->
  <div class="board-canvas">
   <div class="panel-add">
@@ -116,61 +18,74 @@ $(document).ready(function(){
  </div>
 </div>
 
-
-
-<!-- <script>
-$(document).ready((function(){
-    $("#addlist").click(function(){
-      var folder = document.createElement("div");  // Create with DOM
-      $(folder).attr("class", "portlet")
-      $(folder).attr("name", "test")
-      $(folder).css("border", "1px solid")
-      $(folder).css("border-color", "red")
-      $(folder).html("ASDFFF")
-
-      $.post("bookmkfolders/createfolder",
-      {
-        "bookmkfolder[bookmkfoldertitle]" : "test",
-        "bookmkfolder[bookmkfoldercolor]" : "red"
-      },
-          function(data, status){
-              // alert("Data: " + data + "\nStatus: " + status);
-              $(".item").append(folder);         // Append the new elements
-      });
-      // $(".item").append(folder);         // Append the new elements
-    })
-}))
-</script>
-
-
-<p id="notice"><%= notice %></p> -->
-
-
-
-<!-- <h1>포스트</h1>
-<div class ="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class=item>
-        <div class="portlet">
-          test
-        </div>
-        <input type="button" id="addlist" value="add list...."/>
-      </div>
-
-      <% @bookmkfolders.each do |bookmkfolder| %>
-        <ul>
-          <%= "#{bookmkfolder.id}번 글입니다" %>
-          <li>
-              <%= link_to bookmkfolder.bookmkfoldertitle, bookmkfolder %>
-              <%= bookmkfolder.bookmkfoldercolor %>
-              <% if user_signed_in? %>
-              <%= link_to icon('pencil'), edit_bookmkfolder_path(bookmkfolder) if bookmkfolder.updatable_by? current_user %>&nbsp;
-              <%= link_to icon('trash'), bookmkfolder, method: :delete, data: { confirm: 'Are you sure?' } if bookmkfolder.deletable_by? current_user %>
-              <% end %>
-          </li>
-        </ul>
-      <% end %>
-    </div>
+<!-- 수정필요 -->
+<div class="board-canvas">
+    <div class="panel-wrapped">
+      <div class="panel" style="background-color:#ff5000">
+       <h2 class="panel-title">bookMarker</h2>
+      <input class="thVal" type="text" style="display: none">
+       <div class="panel-menu">
+           <button class="addfolder js-add-card">Paste URL here</button>
+           <div class="add-card-form" style="display: none">
+               <form>
+               <input type="text" name="input" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">
+               <input type="button" value="SAVE" class="save-button js-save-card">
+               <button class="delete-button js-delete-btn" type="button"><span class="fa fa-times fa-1x" ></span></button>
+               </form>
+           </div>
+       </div>
+       <ul class="card-list">
+         <li class="card-item">
+           <a class="card-link" href="http://www.naver.com" target="_black">
+               <img class="card-thumbnail" src="#" alt="#">
+               <p class="card-txt">http:www.naver.com</p>
+           </a>
+         </li>
+         <li class="card-item">
+           <a class="card-link" href="http://www.naver.com" target="_black">
+               <img class="card-thumbnail" src="#" alt="#">
+               <p class="card-txt">http:www.naver.com</p>
+           </a>
+         </li>
+         <li class="card-item">
+           <a class="card-link" href="http://www.naver.com" target="_black">
+               <img class="card-thumbnail" src="#" alt="#">
+               <p class="card-txt">http:www.naver.com</p>
+           </a>
+         </li>
+         <li class="card-item">
+           <a class="card-link" href="http://www.naver.com" target="_black">
+               <img class="card-thumbnail" src="#" alt="#">
+               <p class="card-txt">http:www.naver.com</p>
+           </a>
+         </li>
+         <li class="card-item">
+           <a class="card-link" href="http://www.naver.com" target="_black">
+               <img class="card-thumbnail" src="#" alt="#">
+               <p class="card-txt">http:www.naver.com</p>
+           </a>
+         </li>
+         <li class="card-item">
+           <a class="card-link" href="http://www.naver.com" target="_black">
+               <img class="card-thumbnail" src="#" alt="#">
+               <p class="card-txt">http:www.naver.com</p>
+           </a>
+         </li>
+         <li class="card-item">
+           <a class="card-link" href="http://www.naver.com" target="_black">
+               <img class="card-thumbnail" src="#" alt="#">
+               <p class="card-txt">http:www.naver.com</p>
+           </a>
+         </li>
+       </ul>
+       </div>
+   </div>
+   <div class="panel-add">
+       <button class="addfolder js-add-panel">Add a folder</button>
+       <div class="board-make js-panel-input" style="display:none">
+           <input type="text" name="input" class="board-make-input js-panel-title" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">
+           <input type="button" value="SAVE" class="save-button js-save-panel">
+           <button class="delete-button js-delete-panel"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>
+       </div>
   </div>
-</div> -->
+   </div>

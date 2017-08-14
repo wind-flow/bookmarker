@@ -1,6 +1,7 @@
 class BookmkfoldersController < ApplicationController
   before_action :set_bookmkfolder, only: [:show, :edit, :update, :destroy]
 
+
   # GET /bookmkfolders
   # GET /bookmkfolders.json
   def index
