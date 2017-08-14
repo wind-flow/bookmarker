@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :bookmkfolders
   # resources :posts
   # post "bookmkfolder/newfolder" => "bookmkfolder#newfolder"
-  get "bookmkfolders/createfolder" => "bookmkfolders#createfolder"
+
   post "bookmkfolders/createfolder" => "bookmkfolders#createfolder"
   devise_for :users, controllers: {registrations: 'admin/registrations', :omniauth_callbacks => "admin/omniauth_callbacks"}
   # :controllers => { :sessions => "admin/sessions"}

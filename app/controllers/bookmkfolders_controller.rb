@@ -15,7 +15,7 @@ class BookmkfoldersController < ApplicationController
 
   # GET /bookmkfolders/new
   def newfolder
-    @bookmkfolder = Bookmkfolder.new
+
     #  redirect_to '/bookmkfolder/createfolder'
   end
 
@@ -76,6 +76,6 @@ class BookmkfoldersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bookmkfolder_params
-      params.require(:bookmkfolder).permit(:bookmkfoldertitle, :bookmkfoldercolor)
+      params.require(:bookmkfolder).permit(:bookmkfoldertitle)
     end
 end
