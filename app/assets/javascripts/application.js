@@ -11,7 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui/widgets/sortable
+//= require rails_sortable
 //= require jquery_ujs
 //= require_bookmarker3
 //= require turbolinks
 //= require_tree .
+//= require_bookmarker3

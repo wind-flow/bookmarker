@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   root 'bookmkfolders#index'
   resources :bookmkfolders do
     resources :bookmks
+    collection {post :sort }
   end
 
   resources :bookmks
+
   # resources :posts
   # post "bookmkfolder/newfolder" => "bookmkfolder#newfolder"
 

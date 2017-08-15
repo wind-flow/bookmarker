@@ -14,7 +14,7 @@ $(document).ready(function(){
                             <h2 class="panel-title">' + title + '</h2>\
                             <input class="thVal" type="text" style="display: none">\
                             <div class="panel-menu">\
-                                <button class="addfolder js-add-card">Add a bookmark</button>\
+                                <button class="addfolder js-add-card">Add a boookmark</button>\
                                 <div class="add-card-form" style="display: none">\
                                     <input type="text" name="input" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">\
                                     <input type="button" value="SAVE" class="save-button js-save-card">\
@@ -78,8 +78,15 @@ $(document).ready(function(){
 //폴더생성취소
      $(document).on("click", ".js-delete-panel",function(){
          var deleteBtn = $(this);
+<<<<<<< HEAD
          var panelInput = deleteBtn.parent();
          var panelAdd = panelInput.siblings('.js-add-panel');
+=======
+         var panelInput = deleteBtn.parents('.js-panel-input');
+
+         var panelAdd = panelInput.siblings('.addfolder');
+        //  debugger;
+>>>>>>> 8a13870e519fa11772f4de332343e6207afd075a
          panelInput.css('display', 'none');
          panelAdd.css('display', 'block');
      });
@@ -108,7 +115,11 @@ $(document).ready(function(){
 //      }
 //    });
 
+<<<<<<< HEAD
     $(document).on('dblclick', ".panel-title", function (e) {
+=======
+    $(".panel-title").dblclick(function (e) {
+>>>>>>> 8a13870e519fa11772f4de332343e6207afd075a
        e.stopPropagation();      //<-------stop the bubbling of the event here
        var currentEle = $(this);
        var value = $(this).html();
@@ -132,7 +143,26 @@ $(document).ready(function(){
           }
       });
     }
+<<<<<<< HEAD
 
 
+=======
+    $(".board-canvas").sortable({
+      connectWith:".panel-wrapped",
+      update: function(event, ui) {
+        children = $(".panel");
+           var sort = new Array()
+           for (x = 0; x < children.length; x++) {
+             if(children[x].id != null){
+               sort.push(children[x].id)
+             }
+           }
+                $.post($(this).data('update-url'), {
+                  "sequence" : sort
+                })
+                // alert($(this).sortable('toArray').toString())
+             }
+    })
+>>>>>>> 8a13870e519fa11772f4de332343e6207afd075a
 
 });
