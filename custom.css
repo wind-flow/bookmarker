@@ -1,0 +1,17 @@
+.introduction{
+    background: url('https://uni.likelion.org/assets/assignments-header-0711a70ec411408ad39b39bb7df38362ff6f0c723430f3b6d55e25826d78f078.png');
+    background-size:cover;
+    height: 1000px;
+    
+}
+
+.login{
+    padding: 150px;
+}
+
+.welcome{
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 400px;
+}
