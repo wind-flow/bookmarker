@@ -44,7 +44,7 @@
     font-family: Raleway;
 }
 
-#new_user:before {
+/*#new_user:before {
     content: "";
     width: 110%;
     height: 110%;
@@ -57,7 +57,7 @@
     top: -5%;
 
     filter: blur(3px);
-}
+}*/
 
 #new_user .forceColor{
     width: 100%;
@@ -109,6 +109,7 @@
 #new_user .form_row_email .rem_box{
   color: rgba(255,255,255,0.4);
 }
+
 #new_user .btn{
     padding: 10px 20px;
     width: 100%;
@@ -140,7 +141,7 @@
   color : #ffffff;
 }
 
-#new_user .form_row_email .input p .help-block{
+/*#new_user .form_row_email .input p .help-block{
   text-align: center;
   color: #ffffff;
-}
+}*/

@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :omniauthable, :omniauth_providers => [:facebook]
   has_many :bookmkfolders, dependent: :destroy
-
+  has_many :bookmks
 
   after_create :set_default_role, if: Proc.new { User.count > 1}
   private

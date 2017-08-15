@@ -1,176 +1,48 @@
-
-
-
-<script>
-$(document).ready(function(){
-    $('#addPanelBtn').on('click', function(){
-        $(this).css('display', 'none');
-        $('#addPanelInput').css('display','block');
-    });
-    $('#savePanel').on('click', function() {
-        var canvas = $('.board-canvas');
-        var panel = $('.panel-add');
-        var panelTitle = $('#panelTitle');
-        var createPanelTemplate = function(title, color) {
-            return '<div class="panel-wrapped">\
-                        <div class="panel" style="background-color:' + color + '">\
-                            <h2 class="panel-title">' + title + '</h2>\
-                            <div class="panel-menu">\
-                                <button class="addfolder js-add-card">Add a folder</button>\
-                                <div class="add-card-form" style="display: none">\
-                                    <input type="text" name="input" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">\
-                                    <input type="button" value="SAVE" class="save-button js-save-card">\
-                                    <button class="delete-button"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>\
-                                </div>\
-                            </div>\
-                            <ul class="card-list">\
-                            </ul>\
-                        </div>\
-                    </div>'
-        }
-        var createColor = function() {
-            var colors = ['#ff5000', '#008000', '#f00000', '#333', '#fff000']
-            var rand = Math.floor(Math.random() * colors.length);
-            return colors[rand];
-        }
-
-        var getPanelTitle = function() {
-            var title = panelTitle.val();
-            panelTitle.val('');
-            return title;
-        }
-
-        panel.before(createPanelTemplate(getPanelTitle(), createColor()));
-        $('#addPanelBtn').css('display', 'block');
-        $('#addPanelInput').css('display','none');
-    });
-
-    $('.board-canvas').on('click', '.js-add-card', function() {
-        var cardBtn = $(this);
-        var panelMenu = cardBtn.parent();
-        var cardInput = panelMenu.find('.add-card-form');
-        panelMenu.css('background-color', '#eee');
-        cardBtn.css('display', 'none');
-        cardInput.css('display', 'block');
-    });
-
-    $('.board-canvas').on('click', '.js-save-card', function() {
-        var saveBtn = $(this);
-        var panelMenu = saveBtn.parents('.panel-menu')
-        var cardList = panelMenu.siblings('.card-list');
-        var cardInput = saveBtn.siblings('.board-make-input');
-        var getCardLink = function() {
-            var title = cardInput.val();
-            cardInput.val('');
-            return title;
-        }
-        var createCardTemplate = function(link) {
-            return '<li class="card-item">\
-                        <a class="card-link" href="' + link + '" target="_black">\
-                            <img class="card-thumbnail" src="#" alt="#">\
-                            <p class="card-txt">' + link + '</p>\
-                        </a>\
-                    </li>'
-        }
-        cardList.prepend(createCardTemplate(getCardLink()));
-        panelMenu.css('background-color', 'transparent');
-        panelMenu.find('.js-add-card').css('display', 'block');
-        panelMenu.find('.add-card-form').css('display', 'none');
-    })
-
-    // $(document).on("click", ".delete-button",function(){
-    //     $(".board-make").remove()
-    //     $(".board-make-input").remove()
-    //     $(".save-button").remove()
-    //     $(".delete-button").remove()
-    //     $(".fa fa-times fa-1x").remove()
-
-    //     var addfolder = document.createElement("button")
-    //     $(addfolder).attr({
-    //         "class" : "addfolder"
-    //     })
-    //     $(addfolder).html("Add a folder")
-
-    //     $(".panel").append(addfolder);
-    // });
-});
-</script>
-
 <!-- 북마크 폴더 만드는 뷰 -->
- <div class="board-canvas">
-  <div class="panel-add">
-    <%= button_tag "Add a folder", type: 'button', class: 'addfolder', id: 'addPanelBtn' %>
-      <div id="addPanelInput" class="board-make" style="display:none">
-          <%= simple_form_for @bookmkfolder, remote: true, url: {action: "createfolder"} do |f| %>
-          <%= f.input_field :bookmkfoldertitle, class: 'board-make-input', :autocomplete => :off, :autocorrect => :off, :spellcheck => false, placeholder: 'Add a folder' %>
-          <%= f.button :submit, "Save", id: 'savePanel', class: 'save-button' %>
-          <%= button_tag "", type: 'button' , class: 'delete-button' %>
-          <!-- <%= f.input :email, placeholder: 'Email', label: false, required: true, autofocus: true, input_html: { class:  'input' } %> -->
-          <!-- <form action="bookmkfolders/createfolder" method="post" data-remote="true"> -->
-            <!-- <input type="text" name="bookmkfolder[bookmkfoldertitle]" id="panelTitle" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder"> -->
-            <!-- <input type="submit" value="SAVE" id="savePanel" class="save-button"> -->
-            <!-- <button class="delete-button"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button> -->
-          <!-- </form> -->
-          <% end %>
-      </div>
- </div>
+
+
+
+<div class="board-canvas">
+<!-- 메인 폴더 & 북마크 추가 기능 -->
+  <% @bookmkfolders.each do |bookmkfolder| %>
+          <div class="panel-wrapped">
+            <ul>
+              <li class="panel">
+                <!-- <%= text_field_tag :test, "", class: 'thVal' %> -->
+                <h2 class="panel-title"><%= bookmkfolder.bookmkfoldertitle %></h2>
+                <div class="panel-menu">
+                  <%= button_tag "Add a bookmark-url", type: 'button', class: 'addfolder js-add-card' %>
+                  <div class="add-card-form">
+                    <%= simple_form_for @bookmkfolder, remote: true, url: {action: "<%= @bookmkfolder.id %>"} do |k| %>
+                    <%= k.input_field :bookmktitle, class: 'board-make-input', autocomplete: :off, autocorrect: :off, spellcheck: false, placeholder: 'Add a bookmark' %>
+                    <%= button_tag "SAVE", type: 'submit' , class: 'save-button js-save-card' %>
+                    <%= button_tag "", type: 'button', class: 'delete-button' %>
+                    <% end %>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="card-list">
+              <% bookmkfolder.bookmks.each do |bookmk| %>
+              <li class ="card-item">
+                <%= link_to "","<%= bookmk.bookmktitle %>", class: 'card-link' %>
+                <%= image_tag "#", class: 'card-thumbnail' %>
+                <p class = "card-txt"><%= bookmk.bookmktitle%></p>
+              </li>
+              <%end%>
+            </ul>
+          </div>
+      <%end%>
+
+                <div class="panel-add">
+                  <%= button_tag "Add a folder", type: 'button', class: 'addfolder js-add-panel' %>
+                    <div class="board-make js-panel-input" style="display:none">
+                      <%= simple_form_for @bookmkfolder, remote: true, url: {action: "createfolder"} do |f| %>
+                      <%= f.input_field :bookmkfoldertitle, class: 'board-make-input', :autocomplete => :off, :autocorrect => :off, :spellcheck => false, placeholder: 'Add a folder' %>
+                      <%= button_tag "SAVE", type: 'submit', class: 'save-button js-save-panel' %>
+                      <%= button_tag "", type: 'button' , class: 'delete-button js-delete-panel' %>
+                      <% end %>
+                    </div>
+                  </div>
 </div>
-
-
-
-<!-- <script>
-$(document).ready((function(){
-    $("#addlist").click(function(){
-      var folder = document.createElement("div");  // Create with DOM
-      $(folder).attr("class", "portlet")
-      $(folder).attr("name", "test")
-      $(folder).css("border", "1px solid")
-      $(folder).css("border-color", "red")
-      $(folder).html("ASDFFF")
-
-      $.post("bookmkfolders/createfolder",
-      {
-        "bookmkfolder[bookmkfoldertitle]" : "test",
-        "bookmkfolder[bookmkfoldercolor]" : "red"
-      },
-          function(data, status){
-              // alert("Data: " + data + "\nStatus: " + status);
-              $(".item").append(folder);         // Append the new elements
-      });
-      // $(".item").append(folder);         // Append the new elements
-    })
-}))
-</script>
-
-
-<p id="notice"><%= notice %></p> -->
-
-
-
-<!-- <h1>포스트</h1>
-<div class ="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class=item>
-        <div class="portlet">
-          test
-        </div>
-        <input type="button" id="addlist" value="add list...."/>
-      </div>
-
-      <% @bookmkfolders.each do |bookmkfolder| %>
-        <ul>
-          <%= "#{bookmkfolder.id}번 글입니다" %>
-          <li>
-              <%= link_to bookmkfolder.bookmkfoldertitle, bookmkfolder %>
-              <%= bookmkfolder.bookmkfoldercolor %>
-              <% if user_signed_in? %>
-              <%= link_to icon('pencil'), edit_bookmkfolder_path(bookmkfolder) if bookmkfolder.updatable_by? current_user %>&nbsp;
-              <%= link_to icon('trash'), bookmkfolder, method: :delete, data: { confirm: 'Are you sure?' } if bookmkfolder.deletable_by? current_user %>
-              <% end %>
-          </li>
-        </ul>
-      <% end %>
-    </div>
-  </div>
-</div> -->
