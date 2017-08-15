@@ -74,7 +74,7 @@ input, textarea, select, button, meter, progress {
 /* Common Settings */
 html {
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1;
   color: #fff;
   background-color: rgb(228,228,228);
@@ -158,7 +158,7 @@ body {
   font-size: 13px;
   width: 100%;
   color: #000;
-  padding: 0 20px;
+  padding: 10px 20px;
   list-style: none;
   display: block;
 }
@@ -318,12 +318,13 @@ button {
 .panel {
   max-height: 100%;
        display: flex;
-       padding: 8px;
+       padding: 10px;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
      flex-direction: column;
 }
 .panel-wrapped .panel-title {
+    padding: 0 8px;
     font-size: 20px;
     line-height: 24px;
     min-height: 24px;
@@ -334,9 +335,9 @@ button {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;*/
-  padding: 8px;
+/*  padding: 8px;*/
   /*background-color: #eee;*/
-  margin-bottom: 8px;
+  margin: 8px;
   border-radius: 4px;
 }
 .panel-wrapped .card-list {
@@ -373,4 +374,14 @@ button {
   padding: 8px;
   background-color: rgb(228,228,228);
   vertical-align: top;
+}
+
+.thVal {
+  width: 100%;
+  height: 40px;
+  font-size: 13px;
+  border-width: 2px;
+  border-radius: 3px;
+  border: none;
+  padding: 2px 6px 3px;
 }

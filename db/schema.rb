@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810163118) do
+ActiveRecord::Schema.define(version: 20170814181647) do
 
   create_table "bookmkfolders", force: :cascade do |t|
     t.string   "bookmkfoldertitle"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170810163118) do
     t.integer  "user_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "sequence"
     t.index ["bookmkid_id"], name: "index_bookmkfolders_on_bookmkid_id"
     t.index ["email_id"], name: "index_bookmkfolders_on_email_id"
     t.index ["user_id"], name: "index_bookmkfolders_on_user_id"
