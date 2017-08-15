@@ -7,6 +7,8 @@ class BookmkfoldersController < ApplicationController
   def index
     @bookmkfolders = Bookmkfolder.all
     @bookmkfolder = Bookmkfolder.new
+    @bookmk = Bookmk.all
+    @bookmk = Bookmk.new
   end
 
   # GET /bookmkfolders/1
@@ -71,12 +73,12 @@ class BookmkfoldersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_bookmkfolder
-      @bookmkfolder = Bookmkfolder.find(params[:id])
-    end
+    # def set_bookmkfolder
+    #   @bookmkfolder = Bookmkfolder.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def bookmkfolder_params
-      params.require(:bookmkfolder).permit(:bookmkfoldertitle)
-    end
+    # def bookmkfolder_params
+    #   params.require(:bookmkfolder).permit(:bookmkfoldertitle)
+    # end
 end

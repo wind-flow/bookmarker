@@ -288,6 +288,10 @@ button {
   font-size: 13px;
 }
 
+.add-card-form {
+  display : none;
+}
+
 #addlist {
   background-color: rgba(189,189,189,1);
   border: none;
@@ -383,4 +387,5 @@ button {
   border-radius: 3px;
   border: none;
   padding: 2px 6px 3px;
+  display : none;
 }

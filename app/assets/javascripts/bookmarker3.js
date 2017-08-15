@@ -14,7 +14,7 @@ $(document).ready(function(){
                             <h2 class="panel-title">' + title + '</h2>\
                             <input class="thVal" type="text" style="display: none">\
                             <div class="panel-menu">\
-                                <button class="addfolder js-add-card">Add a folder</button>\
+                                <button class="addfolder js-add-card">Add a bookmark</button>\
                                 <div class="add-card-form" style="display: none">\
                                     <input type="text" name="input" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">\
                                     <input type="button" value="SAVE" class="save-button js-save-card">\

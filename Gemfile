@@ -14,7 +14,7 @@ gem 'omniauth-facebook' #페이스북 로그인
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails' #css에서 vendor prefix제공
 # 썸네일 생성
-gem 'link_thumbnailer'
+
 
 gem 'rails_db'
 gem 'pry'
