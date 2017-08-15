@@ -1,17 +1,16 @@
-<h1 class ="logo large">BOOKMARKER</h1>
+<h1 class ="logo large">Book Marker</h1>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
   <div class="forceColor"></div>
   <div class="form_row_email">
-    <div class="spanColor" style="height:41px;"></div>
-    <%= f.input :username, placeholder: '닉네임', label: false, required: true, autofocus: true, input_html: { class:  'input' } %>
-    <%= f.input :email, placeholder: '이메일', label: false, required: true, autofocus: true, input_html: { class:  'input' } %>
-    <%= f.input :password, placeholder: '비밀번호', label: false, required: true, input_html: {:class => "input"}, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, placeholder: '비밀번호 확인', label: false, required: true, input_html: { class:  'input' } %>
+    <%= f.input :username, placeholder: 'Username', label: false, required: true, autofocus: true, input_html: { class:  'input' } %>
+    <%= f.input :email, placeholder: 'Email', label: false, required: true, autofocus: true, input_html: { class:  'input' } %>
+    <%= f.input :password, placeholder: 'Password (6 characters minimum)', label: false, required: true, input_html: {:class => "input"} %>
+    <%= f.input :password_confirmation, placeholder: 'Password Confirmation', label: false, required: true, input_html: { class:  'input' } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "회원가입", class: 'btn sign_up' %>
+    <%= f.button :submit, "Sign Up", class: 'btn sign_up' %>
   </div>
 
 <% end %>
