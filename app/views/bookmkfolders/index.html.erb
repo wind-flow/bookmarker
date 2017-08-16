@@ -1,7 +1,7 @@
 <ul class="board-canvas" data-update-url="<%=sort_bookmkfolders_url%>">
   <% @bookmkfolders.each do |bookmkfolder| %>
     <div class="panel-wrapped">
-        <li id="<%=bookmkfolder.id%>" class="panel" style="background-color:<%=bookmkfolder.bookmkfoldercolor%>">
+        <li id="folder_<%=bookmkfolder.id%>" class="panel" style="background-color:<%=bookmkfolder.bookmkfoldercolor%>">
           <h2 class="panel-title"><%=bookmkfolder.bookmkfoldertitle%></h2>
           <div class="panel-menu">
               <button class="addfolder js-add-card">Add a card</button>

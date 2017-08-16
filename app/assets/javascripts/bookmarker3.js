@@ -140,7 +140,7 @@ $(document).ready(function(){
            var sort = new Array()
            for (x = 0; x < children.length; x++) {
              if(children[x].id != null){
-               sort.push(children[x].id)
+               sort.push(children[x].id.slice(-1))
              }
            }
                 $.post($(this).data('update-url'), {

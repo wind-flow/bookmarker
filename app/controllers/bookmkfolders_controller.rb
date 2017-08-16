@@ -81,6 +81,7 @@ class BookmkfoldersController < ApplicationController
 
   def sort
     folder = params[:sequence]
+    puts params[:sequence]
     for i in 1..folder.size
         fold = Bookmkfolder.find(i)
         fold.sequence = params[:sequence].index(i.to_s)

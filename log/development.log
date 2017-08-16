@@ -36461,3 +36461,693 @@ Processing by BookmkfoldersController#index as HTML
 Completed 200 OK in 70ms (Views: 66.2ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-16 09:12:40 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.3ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (19.5ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.3ms)
+Completed 200 OK in 500ms (Views: 434.4ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/bookmkfolders/sort" for 127.0.0.1 at 2017-08-16 09:12:44 +0900
+Processing by BookmkfoldersController#sort as */*
+  Parameters: {"sequence"=>["3", "4", "1", "2", "5"]}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 2], ["updated_at", "2017-08-16 00:12:44.556205"], ["id", 1]]
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 0], ["updated_at", "2017-08-16 00:12:44.574913"], ["id", 3]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 1], ["updated_at", "2017-08-16 00:12:44.588408"], ["id", 4]]
+  [1m[35m (17.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (1.0ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+No template found for BookmkfoldersController#sort, rendering head :no_content
+Completed 204 No Content in 176ms (ActiveRecord: 40.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 09:12:45 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.3ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.3ms)
+Completed 200 OK in 104ms (Views: 99.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/bookmkfolders/createfolder" for 127.0.0.1 at 2017-08-16 09:12:55 +0900
+Processing by BookmkfoldersController#createfolder as JS
+  Parameters: {"utf8"=>"✓", "bookmkfolder"=>{"bookmkfoldertitle"=>"ffff", "bookmkfoldercolor"=>""}, "commit"=>"SAVE"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: bookmkfoldercolor
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmkfolders"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "bookmkfolders" ("bookmkfoldertitle", "bookmkfoldercolor", "user_id", "created_at", "updated_at", "sequence") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bookmkfoldertitle", "ffff"], ["bookmkfoldercolor", "#c9fffc"], ["user_id", 1], ["created_at", "2017-08-16 00:12:55.283506"], ["updated_at", "2017-08-16 00:12:55.283506"], ["sequence", 6]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering bookmkfolders/createfolder.js.erb
+  Rendered bookmkfolders/createfolder.js.erb (0.5ms)
+Completed 200 OK in 29ms (Views: 7.4ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 09:12:56 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.3ms)
+Completed 200 OK in 70ms (Views: 67.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/bookmkfolders/createfolder" for 127.0.0.1 at 2017-08-16 09:13:07 +0900
+Processing by BookmkfoldersController#createfolder as JS
+  Parameters: {"utf8"=>"✓", "bookmkfolder"=>{"bookmkfoldertitle"=>"gggg", "bookmkfoldercolor"=>""}, "commit"=>"SAVE"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: bookmkfoldercolor
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmkfolders"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "bookmkfolders" ("bookmkfoldertitle", "bookmkfoldercolor", "user_id", "created_at", "updated_at", "sequence") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bookmkfoldertitle", "gggg"], ["bookmkfoldercolor", "#ffc9c9"], ["user_id", 1], ["created_at", "2017-08-16 00:13:07.063073"], ["updated_at", "2017-08-16 00:13:07.063073"], ["sequence", 7]]
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering bookmkfolders/createfolder.js.erb
+  Rendered bookmkfolders/createfolder.js.erb (0.7ms)
+Completed 200 OK in 39ms (Views: 13.0ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 09:13:08 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (2.3ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.4ms)
+Completed 200 OK in 76ms (Views: 71.4ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/bookmkfolders/sort" for 127.0.0.1 at 2017-08-16 09:13:11 +0900
+Processing by BookmkfoldersController#sort as */*
+  Parameters: {"sequence"=>["3", "4", "5", "1", "2", "6", "7"]}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 3], ["updated_at", "2017-08-16 00:13:11.550236"], ["id", 1]]
+  [1m[35m (28.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 4], ["updated_at", "2017-08-16 00:13:11.589270"], ["id", 2]]
+  [1m[35m (16.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.6ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.4ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 2], ["updated_at", "2017-08-16 00:13:11.640265"], ["id", 5]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 5], ["updated_at", "2017-08-16 00:13:11.659523"], ["id", 6]]
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 6], ["updated_at", "2017-08-16 00:13:11.675341"], ["id", 7]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+No template found for BookmkfoldersController#sort, rendering head :no_content
+Completed 204 No Content in 264ms (ActiveRecord: 71.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 09:13:12 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.3ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 83ms (Views: 80.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 09:58:10 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/home/gunwoo/Desktop/git/bookmarker/app/controllers/bookmkfolders_controller.rb:86: syntax error, unexpected ':', expecting ']'
+ params[:sequence].index(i[-1:1].to_s)
+                              ^):
+  
+app/controllers/bookmkfolders_controller.rb:86: syntax error, unexpected ':', expecting ']'
+  Rendering /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.2ms)
+  Rendering /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.2ms)
+  Rendered /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.5ms)
+Started GET "/" for 127.0.0.1 at 2017-08-16 09:58:43 +0900
+  
+SyntaxError (/home/gunwoo/Desktop/git/bookmarker/app/controllers/bookmkfolders_controller.rb:86: syntax error, unexpected ':', expecting ']'
+quence = params[:sequence][-1:1].index(i.to_s)
+                              ^):
+  
+app/controllers/bookmkfolders_controller.rb:86: syntax error, unexpected ':', expecting ']'
+  Rendering /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/gunwoo/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.8ms)
+Started GET "/" for 127.0.0.1 at 2017-08-16 09:59:16 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.3ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (10.8ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.9ms)
+Completed 200 OK in 598ms (Views: 536.1ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/bookmkfolders/sort" for 127.0.0.1 at 2017-08-16 09:59:36 +0900
+Processing by BookmkfoldersController#sort as */*
+  Parameters: {"sequence"=>["folder_3", "folder_4", "folder_2", "folder_5", "folder_1", "folder_6", "folder_7"]}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", nil], ["updated_at", "2017-08-16 00:59:36.775200"], ["id", 1]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", nil], ["updated_at", "2017-08-16 00:59:36.788790"], ["id", 2]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", nil], ["updated_at", "2017-08-16 00:59:36.800825"], ["id", 3]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", nil], ["updated_at", "2017-08-16 00:59:36.816329"], ["id", 4]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", nil], ["updated_at", "2017-08-16 00:59:36.832123"], ["id", 5]]
+  [1m[35m (20.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", nil], ["updated_at", "2017-08-16 00:59:36.863600"], ["id", 6]]
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", nil], ["updated_at", "2017-08-16 00:59:36.898634"], ["id", 7]]
+  [1m[35m (16.8ms)[0m  [1m[36mcommit transaction[0m
+No template found for BookmkfoldersController#sort, rendering head :no_content
+Completed 204 No Content in 281ms (ActiveRecord: 81.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 09:59:37 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.4ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.4ms)
+Completed 200 OK in 86ms (Views: 80.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 10:00:13 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.4ms)
+Completed 200 OK in 137ms (Views: 81.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 10:00:34 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.5ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.7ms)
+Completed 200 OK in 137ms (Views: 87.3ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/bookmkfolders/sort" for 127.0.0.1 at 2017-08-16 10:00:37 +0900
+Processing by BookmkfoldersController#sort as */*
+  Parameters: {"sequence"=>["folder_1", "folder_3", "folder_2", "folder_4", "folder_5", "folder_6", "folder_7"]}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookmkfolder Load (0.8ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+No template found for BookmkfoldersController#sort, rendering head :no_content
+Completed 204 No Content in 120ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 10:00:38 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.3ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 107ms (Views: 102.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 10:03:26 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.4ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered devise/shared/_flash_messages.html.erb (1.2ms)
+Completed 200 OK in 255ms (Views: 202.8ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/bookmkfolders/sort" for 127.0.0.1 at 2017-08-16 10:03:31 +0900
+Processing by BookmkfoldersController#sort as */*
+  Parameters: {"sequence"=>["_", "_", "_", "_", "_", "_", "_"]}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookmkfolder Load (0.3ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+No template found for BookmkfoldersController#sort, rendering head :no_content
+Completed 204 No Content in 165ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 10:03:34 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.3ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 105ms (Views: 101.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 10:03:42 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.4ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.4ms)
+Completed 200 OK in 200ms (Views: 194.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/bookmkfolders/sort" for 127.0.0.1 at 2017-08-16 10:03:46 +0900
+Processing by BookmkfoldersController#sort as */*
+  Parameters: {"sequence"=>["_", "_", "_", "_", "_", "_", "_"]}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.3ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+No template found for BookmkfoldersController#sort, rendering head :no_content
+Completed 204 No Content in 154ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 10:04:01 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.7ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 228ms (Views: 224.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/bookmkfolders/sort" for 127.0.0.1 at 2017-08-16 10:04:03 +0900
+Processing by BookmkfoldersController#sort as */*
+  Parameters: {"sequence"=>["1", "3", "2", "4", "5", "6", "7"]}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 0], ["updated_at", "2017-08-16 01:04:03.501360"], ["id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.3ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 2], ["updated_at", "2017-08-16 01:04:03.522503"], ["id", 2]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 1], ["updated_at", "2017-08-16 01:04:03.533227"], ["id", 3]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 3], ["updated_at", "2017-08-16 01:04:03.550401"], ["id", 4]]
+  [1m[35m (19.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 4], ["updated_at", "2017-08-16 01:04:03.593876"], ["id", 5]]
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 5], ["updated_at", "2017-08-16 01:04:03.629936"], ["id", 6]]
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 6], ["updated_at", "2017-08-16 01:04:03.655834"], ["id", 7]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+No template found for BookmkfoldersController#sort, rendering head :no_content
+Completed 204 No Content in 260ms (ActiveRecord: 72.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 10:04:04 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.3ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 99ms (Views: 90.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/bookmkfolders/sort" for 127.0.0.1 at 2017-08-16 10:04:06 +0900
+Processing by BookmkfoldersController#sort as */*
+  Parameters: {"sequence"=>["1", "2", "4", "3", "5", "6", "7"]}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 1], ["updated_at", "2017-08-16 01:04:06.750609"], ["id", 2]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 3], ["updated_at", "2017-08-16 01:04:06.761818"], ["id", 3]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 2], ["updated_at", "2017-08-16 01:04:06.775891"], ["id", 4]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+No template found for BookmkfoldersController#sort, rendering head :no_content
+Completed 204 No Content in 163ms (ActiveRecord: 22.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 10:04:06 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.6ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.4ms)
+Completed 200 OK in 89ms (Views: 83.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/bookmkfolders/sort" for 127.0.0.1 at 2017-08-16 10:04:09 +0900
+Processing by BookmkfoldersController#sort as */*
+  Parameters: {"sequence"=>["1", "2", "5", "4", "3", "6", "7"]}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 4], ["updated_at", "2017-08-16 01:04:09.934282"], ["id", 3]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.3ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 3], ["updated_at", "2017-08-16 01:04:09.948325"], ["id", 4]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 2], ["updated_at", "2017-08-16 01:04:09.961670"], ["id", 5]]
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+No template found for BookmkfoldersController#sort, rendering head :no_content
+Completed 204 No Content in 168ms (ActiveRecord: 35.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 10:04:10 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.3ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (10.5ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.4ms)
+Completed 200 OK in 104ms (Views: 100.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/bookmkfolders/sort" for 127.0.0.1 at 2017-08-16 10:04:12 +0900
+Processing by BookmkfoldersController#sort as */*
+  Parameters: {"sequence"=>["2", "1", "5", "4", "3", "6", "7"]}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 1], ["updated_at", "2017-08-16 01:04:12.115021"], ["id", 1]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 0], ["updated_at", "2017-08-16 01:04:12.131787"], ["id", 2]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.3ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+No template found for BookmkfoldersController#sort, rendering head :no_content
+Completed 204 No Content in 154ms (ActiveRecord: 16.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 10:04:12 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.4ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 98ms (Views: 93.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/bookmkfolders/sort" for 127.0.0.1 at 2017-08-16 10:04:14 +0900
+Processing by BookmkfoldersController#sort as */*
+  Parameters: {"sequence"=>["2", "1", "4", "3", "5", "6", "7"]}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 3], ["updated_at", "2017-08-16 01:04:15.017150"], ["id", 3]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 2], ["updated_at", "2017-08-16 01:04:15.032597"], ["id", 4]]
+  [1m[35m (17.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "bookmkfolders" SET "sequence" = ?, "updated_at" = ? WHERE "bookmkfolders"."id" = ?[0m  [["sequence", 4], ["updated_at", "2017-08-16 01:04:15.070511"], ["id", 5]]
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.3ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBookmkfolder Load (0.1ms)[0m  [1m[34mSELECT  "bookmkfolders".* FROM "bookmkfolders" WHERE "bookmkfolders"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+No template found for BookmkfoldersController#sort, rendering head :no_content
+Completed 204 No Content in 219ms (ActiveRecord: 46.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-16 10:04:15 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (0.2ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders" ORDER BY sequence[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered devise/shared/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 88ms (Views: 85.5ms | ActiveRecord: 0.5ms)
+
+
