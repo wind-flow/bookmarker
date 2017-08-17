@@ -1,0 +1,15 @@
+<%= simple_form_for(@bookmk) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :bookmkobj %>
+    <%= f.input :bookmkseq %>
+    <%= f.input :bookmkclick %>
+    <%= f.association :bookmkfolder %>
+    <%= f.association :user %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

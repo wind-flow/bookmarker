@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bookmkobj: MyString
+  bookmkseq: 1
+  bookmkclick: 
+  bookmkfolder: one
+  user: one
+
+two:
+  bookmkobj: MyString
+  bookmkseq: 1
+  bookmkclick: 
+  bookmkfolder: two
+  user: two

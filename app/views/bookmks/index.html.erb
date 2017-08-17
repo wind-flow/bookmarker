@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bookmks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bookmkobj</th>
+      <th>Bookmkseq</th>
+      <th>Bookmkclick</th>
+      <th>Bookmkfolder</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookmks.each do |bookmk| %>
+      <tr>
+        <td><%= bookmk.bookmkobj %></td>
+        <td><%= bookmk.bookmkseq %></td>
+        <td><%= bookmk.bookmkclick %></td>
+        <td><%= bookmk.bookmkfolder %></td>
+        <td><%= bookmk.user %></td>
+        <td><%= link_to 'Show', bookmk %></td>
+        <td><%= link_to 'Edit', edit_bookmk_path(bookmk) %></td>
+        <td><%= link_to 'Destroy', bookmk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bookmk', new_bookmk_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bookmkobj:</strong>
+  <%= @bookmk.bookmkobj %>
+</p>
+
+<p>
+  <strong>Bookmkseq:</strong>
+  <%= @bookmk.bookmkseq %>
+</p>
+
+<p>
+  <strong>Bookmkclick:</strong>
+  <%= @bookmk.bookmkclick %>
+</p>
+
+<p>
+  <strong>Bookmkfolder:</strong>
+  <%= @bookmk.bookmkfolder %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @bookmk.user %>
+</p>
+
+<%= link_to 'Edit', edit_bookmk_path(@bookmk) %> |
+<%= link_to 'Back', bookmks_path %>

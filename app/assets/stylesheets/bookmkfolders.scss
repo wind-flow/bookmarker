@@ -3,6 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* Reset Css */
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+::-webkit-scrollbar
+{ width: 10px;
+  background-color:rgba(255,255,255,0.18);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb
+{ border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+    background-color: rgba(255,255,255,0.41);
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,6 +37,7 @@ time, mark, audio, video {
    border: 0;
    font-size: 100%;
    font: inherit;
+   font-family: Noto Sans, Noto Sans KR;
    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -69,21 +86,21 @@ input, textarea, select, button {
 
 input, textarea, select, button, meter, progress {
     -webkit-writing-mode: horizontal-tb;
+    outline: none !important;
 }
 
 /* Common Settings */
 html {
-  font-family: 'Montserrat', sans-serif;
   font-size: 17px;
   line-height: 1;
-  color: #fff;
+  color: #000;
   background-color: rgb(228,228,228);
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  padding: 0 20px;
+/*  padding: 0 20px;*/
 }
 
 ul {
@@ -100,7 +117,7 @@ ul {
   width: 100%;
   height: 40px;
 /*  padding: 0 40px;*/
-  text-transform: uppercase;
+/*  text-transform: uppercase;*/
   background-color: #000;
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 
@@ -112,7 +129,10 @@ ul {
 }
 
 .brand {
+  color: #fff;
   font-size: 20px;
+  font-family: Fredoka One;
+  padding: 20px;
 }
 
 input {
@@ -147,12 +167,28 @@ body {
 }
 
 .white-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
   width: 100%;
-  height: 100px;
 /*  padding: 0 40px;*/
-  text-transform: uppercase;
   background-color: #fff;
+
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 100;
 }
+
+/*
+.white-bar:hover {
+    height: 200px;
+
+}
+*/
 
 .bar-menu {
   font-size: 13px;
@@ -161,12 +197,6 @@ body {
   padding: 10px 20px;
   list-style: none;
   display: block;
-}
-
-.white-bar {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
 }
 
 .header-search {
@@ -193,6 +223,7 @@ button {
  background-color: rgba(72,72,72,1);
  border: none;
  border-radius: 3px;
+ text-align: center;
 }
 
 .header-search-icon {
@@ -203,7 +234,7 @@ button {
 
 .white-bar li {
   display: inline-block;
-  background-color: #d4d4d4;
+/*  background-color: #d4d4d4;*/
 }
 
 .white-bar a {
@@ -212,7 +243,7 @@ button {
     min-width: 30px;
     height: 25px;
     line-height: 25px;
-    color: #fff;
+    color: #000;
     vertical-align: top;
     text-decoration: none;
     box-sizing: border-box;
@@ -229,9 +260,9 @@ button {
 }
 .board-make {
   /*width: 320px;*/
-  /*height: 100px;*/
-  background-color: #adadad;
-  padding: 8px;
+  height: 106px;
+  background-color: rgb(238,238,238);
+  padding: 10px;
   /*display:flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -240,23 +271,23 @@ button {
 
 .board-make-input {
   display: block;
-  background-color: rgba(189,189,189,1);
+  background-color: rgba(251,251,251,1);
   border-radius: 3px;
   border: none;
   color: #000;
   /*width: 300px;*/
   width: 100%;
   height: 30px;
-  padding: 0 8px;
-  margin-bottom: 8px;
+  padding: 0 3px;
+  margin-bottom: 10px;
   font-size: 13px;
 }
 
 .save-button {
-  background-color: rgba(125,125,125,1);
+  background-color: rgb(212,212,212);
   border-radius: 3px;
   border: none;
-  color: white;
+  color: #7d7d7d;
   width: 100px;
   height:40px;
   margin-right: 6px;
@@ -265,10 +296,10 @@ button {
 }
 
 .delete-button {
-  background-color: rgba(125,125,125,1);
+  background-color: rgb(212,212,212);
   border-radius: 3px;
   border: none;
-  color: white;
+  color: #7d7d7d;
   width: 40px;
   height:40px;
   font-size: 13px;
@@ -280,12 +311,13 @@ button {
 
 
 .addfolder {
-  background-color: rgba(189,189,189,1);
+  background-color: rgba(255,255,255,0.44);
   border: none;
-  color: white;
+  color: #4e4e4e;
   width: 100%;
   height:40px;
   font-size: 13px;
+  text-align: start;
 }
 
 #addlist {
@@ -299,6 +331,7 @@ button {
 
 .board-canvas {
     position: absolute;
+/*    top:140px;*/
     top:140px;
     left:0;
     right:0;
@@ -325,19 +358,23 @@ button {
 }
 .panel-wrapped .panel-title {
     padding: 0 8px;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 24px;
     min-height: 24px;
-    margin-bottom: 10px;
+    width: 280px;
+    margin-bottom: 6px;
+    white-space: normal;
+    word-wrap: break-word;
+/*    margin-bottom: 10px;*/
 }
-.panel-wrapped .panel-menu {
+.panel-wrapped .panel-menu, .add-card-form {
     /*display:flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;*/
-/*  padding: 8px;*/
+  padding: 0 3px;
   /*background-color: #eee;*/
-  margin: 8px;
+  margin: 8px 2px;
   border-radius: 4px;
 }
 .panel-wrapped .card-list {
@@ -352,36 +389,47 @@ button {
 }
 .card-item .card-link {
     display: block;
-    height: 200px;
-    padding: 8px;
-    background-color: #eee;
-    border-radius: 8px;
+/*    height: 200px;*/
+/*    padding: 5px;*/
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid;
 }
 .card-item .card-thumbnail {
   display: inline-block;
   width: 100%;
-  height: 140px;
+  height: 100px;
 }
 .card-item .card-txt {
   font-size: 12px;
   color: #666;
-  padding: 8px 0;
+  padding: 7px 5px;
+  white-space: normal;
+  word-wrap: break-word;
 }
 .panel-add {
   display: inline-block;
   width: 320px;
   height: 820px;
-  padding: 8px;
+/*  padding: 8px;*/
   background-color: rgb(228,228,228);
   vertical-align: top;
 }
 
 .thVal {
-  width: 100%;
-  height: 40px;
+  width: 86%;
+  height: 30px;
   font-size: 13px;
   border-width: 2px;
   border-radius: 3px;
   border: none;
   padding: 2px 6px 3px;
+  margin-left: 5px;
+}
+
+.remove-button {
+  background: none;
+  color: #9b8e8e;
+  position: absolute;
+  margin-left: 275px;
 }

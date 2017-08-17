@@ -4,7 +4,7 @@ class BookmkfoldersController < ApplicationController
   # GET /bookmkfolders
   # GET /bookmkfolders.json
   def index
-    @bookmkfolders = Bookmkfolder.order("sequence")
+    @bookmkfolders = Bookmkfolder.where(user: current_user.id).order(sequence: :asc)
     @bookmkfolder = Bookmkfolder.new
   end
 
@@ -28,7 +28,6 @@ class BookmkfoldersController < ApplicationController
   # POST /bookmkfolders.json
   def createfolder
     colors = ['#c9ddff', '#c9ffdd', '#ffd2c9', '#c9caff', '#fdc9ff', '#fffdc9', '#c9fffc', '#ffc9c9', '#ffe5c9', '#eaffc9']
-    puts Bookmkfolder.methods
     @bookmkfolder = Bookmkfolder.new(bookmkfolder_params)
     @bookmkfolder.user = current_user
     @bookmkfolder.sequence = Bookmkfolder.count + 1
@@ -46,6 +45,26 @@ class BookmkfoldersController < ApplicationController
       end
     end
   end
+
+  def createfolder
+    @bookmkfolder = Bookmkfolder.new(bookmkfolder_params)
+    @bookmkfolder.user = current_user
+    @bookmkfolder.sequence = Bookmkfolder.count + 1
+    @bookmkfolder.bookmkfoldercolor = colors.at(rand(colors.size))
+
+    respond_to do |format|
+      if @bookmkfolder.save
+        format.html { redirect_to @bookmkfolder, notice: 'Bookmkfolder was successfully created.' }
+        format.js {}
+        format.json { render :show, status: :created, location: @bookmkfolder }
+
+      else
+        format.html { render :new }
+        format.json { render json: @bookmkfolder.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   # PATCH/PUT /bookmkfolders/1
   # PATCH/PUT /bookmkfolders/1.json
@@ -83,7 +102,7 @@ class BookmkfoldersController < ApplicationController
     folder = params[:sequence]
     puts params[:sequence]
     for i in 1..folder.size
-        fold = Bookmkfolder.find(i)
+        fold = Bookmkfolder.find(folder.at(i))
         fold.sequence = params[:sequence].index(i.to_s)
         fold.save
     end
