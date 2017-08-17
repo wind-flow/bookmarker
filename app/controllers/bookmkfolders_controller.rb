@@ -5,9 +5,10 @@ class BookmkfoldersController < ApplicationController
   # GET /bookmkfolders
   # GET /bookmkfolders.json
   def index
-    @bookmkfolders = Bookmkfolder.order("sequence")
+    @bookmkfolders = Bookmkfolder.all
+    # @bookmkfolders = Bookmkfolder.order("sequence")
     @bookmkfolder = Bookmkfolder.new
-    @bookmk = Bookmk.all
+    @bookmks = Bookmk.all
     @bookmk = Bookmk.new
   end
 
@@ -31,7 +32,7 @@ class BookmkfoldersController < ApplicationController
   # POST /bookmkfolders.json
   def createfolder
     colors = ['#c9ddff', '#c9ffdd', '#ffd2c9', '#c9caff', '#fdc9ff', '#fffdc9', '#c9fffc', '#ffc9c9', '#ffe5c9', '#eaffc9']
-    puts Bookmkfolder.methods
+
     @bookmkfolder = Bookmkfolder.new(bookmkfolder_params)
     @bookmkfolder.user = current_user
     @bookmkfolder.sequence = Bookmkfolder.count + 1
@@ -97,7 +98,7 @@ class BookmkfoldersController < ApplicationController
     # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    # def bookmkfolder_params
-    #   params.require(:bookmkfolder).permit(:bookmkfoldertitle)
-    # end
+    def bookmkfolder_params
+      params.require(:bookmkfolder).permit(:bookmkfoldertitle)
+    end
 end

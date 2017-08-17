@@ -5,8 +5,10 @@ class CreateBookmks < ActiveRecord::Migration[5.0]
       t.string :bookmkobj
       t.integer :bookmkseq
       t.integer :bookmkclick
-      t.references :user, foreign_key: true, index: true
-      t.references :bookmkfolder, foreign_key: true
+      t.integer :bookmkfolder_id
+      t.integer :user_id
+
+
       t.timestamps
     end
   end

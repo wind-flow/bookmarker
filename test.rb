@@ -35,4 +35,4 @@
            <button class="delete-button js-delete-panel"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>
        </div>
    </div>
-</di
+</div>

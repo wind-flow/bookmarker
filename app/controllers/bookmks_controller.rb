@@ -1,15 +1,15 @@
-class BookmksController < ApplicationController
+class BookmksController <  ApplicationController
 
   def createbookmk
-    @bookmk = Bookmk.new(set_bookmk)
-    @bookmk.bookmkid = params[:input_bookmkid]
-    @bookmk.bookmkfolder_id = params[:bookmkfolder_id]
-
-    respond_to do |format|
-      if @bookmk.save
-        format.html { redirect_to @bookmkfolder }
-        format.js {}
-        format.json { render :show, status: :created, location: @bookmk }
+    @bookmk = Bookmk.new(bookmk_params)
+    @bookmkfolder = Bookmkfolder.find(params[:bookmkfolder_id])
+    @bookmk.save
+    redirect_to @bookmkfolder
+    # respond_to do |format|
+    #   if @bookmk.save
+    #     format.html { redirect_to @bookmkfolder }
+    #     format.js {}
+    #     format.json { render :show, status: :created, location: @bookmk }
 
       else
       end
@@ -31,9 +31,9 @@ class BookmksController < ApplicationController
       @bookmkfolder = Bookmkfolder.find(params[:bookmkfolder_id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    # def bookmk_params
-    #   params.require(:bookmk).permit(:bookmkid)
-    # end
+    Never trust parameters from the scary internet, only allow the white list through.
+    def bookmk_params
+      params.require(:bookmk).permit(:bookmktitle, :bookmkfolder_id)
+    end
 
 end

@@ -1,6 +1,8 @@
+
+
 $(document).ready(function(){
 
-    $('.js-add-panel').on('click', function(){
+    $('.js-add-panel').on('click', function() {
         $(this).css('display', 'none');
         $('.js-panel-input').css('display','block');
     });
@@ -14,11 +16,13 @@ $(document).ready(function(){
                             <h2 class="panel-title">' + title + '</h2>\
                             <input class="thVal" type="text" style="display: none">\
                             <div class="panel-menu">\
-                                <button class="addfolder js-add-card">Add a boookmark</button>\
+                                <button class="addfolder js-add-card">Add a boookmark-url</button>\
                                 <div class="add-card-form" style="display: none">\
-                                    <input type="text" name="input" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">\
+                                    <form action = "/bookmkfolders/<%=@bookmkfolder.id %>" method= "post">\
+                                    <input type="text" name="bookmk[bookmktitle]" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">\
                                     <input type="button" value="SAVE" class="save-button js-save-card">\
                                     <button class="delete-button js-delete-btn"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>\
+                                    </form>\
                                 </div>\
                             </div>\
                             <ul class="card-list">\
@@ -73,26 +77,23 @@ $(document).ready(function(){
         panelMenu.css('background-color', 'transparent');
         panelMenu.find('.js-add-card').css('display', 'block');
         panelMenu.find('.add-card-form').css('display', 'none');
-    })
+    });
 
 //폴더생성취소
-     $(document).on("click", ".js-delete-panel",function(){
+     $(document).on("click", ".js-delete-panel",function() {
          var deleteBtn = $(this);
-<<<<<<< HEAD
+
          var panelInput = deleteBtn.parent();
          var panelAdd = panelInput.siblings('.js-add-panel');
-=======
          var panelInput = deleteBtn.parents('.js-panel-input');
-
          var panelAdd = panelInput.siblings('.addfolder');
-        //  debugger;
->>>>>>> 8a13870e519fa11772f4de332343e6207afd075a
+
          panelInput.css('display', 'none');
          panelAdd.css('display', 'block');
      });
 
 //카드생성취소
-    $(document).on("click", ".js-delete-btn",function(){
+    $(document).on("click", ".js-delete-btn",function() {
         console.log("dd");
          var deletecardBtn = $(this);
          var cardInput = deletecardBtn.parents('.add-card-form');
@@ -114,12 +115,11 @@ $(document).ready(function(){
 //        ui.item.removeClass('tilt');
 //      }
 //    });
+});
 
-<<<<<<< HEAD
     $(document).on('dblclick', ".panel-title", function (e) {
-=======
+
     $(".panel-title").dblclick(function (e) {
->>>>>>> 8a13870e519fa11772f4de332343e6207afd075a
        e.stopPropagation();      //<-------stop the bubbling of the event here
        var currentEle = $(this);
        var value = $(this).html();
@@ -143,10 +143,7 @@ $(document).ready(function(){
           }
       });
     }
-<<<<<<< HEAD
 
-
-=======
     $(".board-canvas").sortable({
       connectWith:".panel-wrapped",
       update: function(event, ui) {
@@ -162,7 +159,6 @@ $(document).ready(function(){
                 })
                 // alert($(this).sortable('toArray').toString())
              }
-    })
->>>>>>> 8a13870e519fa11772f4de332343e6207afd075a
+    });
 
 });
