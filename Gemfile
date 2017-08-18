@@ -61,7 +61,7 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   #개발 모드에서 이메일 안보내고 브라우저에서 확인가능
-  gem 'letter_opener', group: :development
+  # gem 'letter_opener', group: :development
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

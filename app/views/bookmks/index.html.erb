@@ -1,0 +1,169 @@
+<div class="white-bar">
+  <div class="bar-menu">
+      <% @bookmkfolders.each do |bookmkfolder| %>
+         <label for="filter-category-<%=bookmkfolder.id %>" style="background-color: <%= bookmkfolder.bookmkfoldercolor %>"><%= bookmkfolder.bookmkfoldertitle %>
+            <input type="checkbox" name="filter-category" value="<%= category.id %>" id="filter-category-<%=category.id %>" data-color="<%= category.color %>" class="filter-category js-checkbox-category" checked>
+         </label>
+      <% end %>
+  </div>
+</div>
+<div class="board-canvas">
+    <% @categories.each do |category| %>
+        <div class="panel-wrapped" data-id="<%=category.id %>">
+            <div class="panel" style="background-color: <%= category.color %>">
+                <h2 class="panel-title"><%= category.title %></h2>
+                <input class="thVal" type="text" style="display: none">
+                <div class="panel-menu">
+                    <button class="addfolder js-add-card">Paste URL here</button>
+                    <div class="add-card-form" style="display: none">
+                        <input type="text" name="input" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">
+                        <input type="button" value="SAVE" class="save-button js-save-card" data-categoryid="<%= category.id%>">
+                        <button class="delete-button js-delete-btn" type="button"><span class="fa fa-times fa-1x" ></span></button>
+                    </div>
+                </div>
+                <ul class="card-list">
+                    <% category.bookmarks.order('id desc').each do |bookmark| %>
+                    <li class="card-item">
+                    <a class="card-link" href="<%=bookmark.link%>" target="_black">
+                        <img class="card-thumbnail" src="<%=bookmark.img_url%>" alt="#">
+                        <p class="card-txt"><%=bookmark.title%></p>
+                    </a>
+                    </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    <% end %>
+   <div class="panel-add">
+        <button class="addfolder js-add-panel">Add a folder</button>
+        <div class="board-make js-panel-input" style="display:none">
+            <input type="text" name="input" class="board-make-input js-panel-title" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">
+            <input type="button" value="SAVE" class="save-button js-save-panel">
+            <button class="delete-button js-delete-panel"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.js-save-panel').on('click', function() {
+        var canvas = $('.board-canvas');
+        var panel = $('.panel-add');
+        var panelTitle = $('.js-panel-title');
+        var tagList = $('.bar-menu');
+        var createPanelTemplate = function(title, color, categoryId) {
+        return '<div class="panel-wrapped" data-id="' + categoryId + '">\
+                    <div class="panel" style="background-color:' + color + '">\
+                        <h2 class="panel-title">' + title + '</h2>\
+                        <input class="thVal" type="text" style="display: none">\
+                        <div class="panel-menu">\
+                            <button class="addfolder js-add-card">Add a folder</button>\
+                            <div class="add-card-form" style="display: none">\
+                                <input type="text" name="input" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">\
+                                <input type="button" value="SAVE" class="save-button js-save-card" data-categoryid=' + categoryId + '>\
+                                <button class="delete-button js-delete-btn"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>\
+                            </div>\
+                        </div>\
+                        <ul class="card-list">\
+                        </ul>\
+                    </div>\
+                </div>'
+        }
+        var templateCategoryTag = function(id, title, color) {
+            return '<label for="filter-category-' + id + '" style="background-color:' + color + '">' + title + '\
+                        <input type="checkbox" name="filter-category" value="' + id + '" id="filter-category-' + id + '" data-color="' + color + '" class="filter-category js-checkbox-category" checked>\
+                    </label>';
+        }
+        $.ajax({
+        method: "POST",
+        url: "/category/add",
+        data: { title: panelTitle.val()},
+        success: function(data){
+            panel.before(createPanelTemplate(data.title, data.color, data.id));
+            tagList.append(templateCategoryTag(data.id, data.title, data.color));
+            panelTitle.val('');
+            $('.js-add-panel').css('display', 'block');
+            $('.js-panel-input').css('display','none');
+        }
+        });
+    });
+    $('.board-canvas').on('click', '.js-save-card', function() {
+        var saveBtn = $(this);
+        var panelMenu = saveBtn.parents('.panel-menu')
+        var cardList = panelMenu.siblings('.card-list');
+        var cardInput = saveBtn.siblings('.board-make-input');
+
+        var createCardTemplate = function(title) {
+            return '<li class="card-item">\
+                            <p class="card-txt">' + title + '</p>\
+                        </a>\
+                    </li>'
+        }
+        $.ajax({
+            method: "POST",
+            url: "/bookmark/add",
+            data: { categoryId: saveBtn.attr("data-categoryid"),
+                    title: cardInput.val()}
+            // success: function(data){
+            //     if(data.isSuccess) {
+            //         console.log(data);
+            //         cardList.prepend(createCardTemplate(data.title, data.link, data.img_url));
+            //         cardInput.val('');
+            //         panelMenu.css('background-color', 'transparent');
+            //         panelMenu.find('.js-add-card').css('display', 'block');
+            //         panelMenu.find('.add-card-form').css('display', 'none');
+            //     } else {
+            //         alert("정확한 url을 입력해주세요.");
+            //         cardInput.val('');
+            //     }
+            // }
+        });
+    });
+
+    $('.bar-menu').on('change', '.js-checkbox-category', function() {
+        var category = $(this);
+        if(category.is(":checked")) {
+            category.parent().css('background-color', category.data('color'));
+            $('.panel-wrapped[data-id=' + category.val() + ']').css('display', 'inline-block');
+        } else {
+            category.parent().css('background-color', '#eaeaea');
+            $('.panel-wrapped[data-id=' + category.val() + ']').css('display', 'none');
+        }
+    });
+
+    $(document).on('keyup', ".thVal", function (e) {
+        if (event.keyCode === 13) {
+            e.stopPropagation();
+            var titleInput = $(this);
+            var titleText = $(this).siblings('.panel-title');
+            var categoryId = $(this).parents('.panel-wrapped').data('id');;
+                $.ajax({
+                    method: "POST",
+                    url: "/category/modify",
+                    data: { id: categoryId,
+                            title: titleInput.val()},
+                    success: function(data){
+                        titleText.html(data.title);
+                        titleInput.css('display','none');
+                        titleText.css('display','block');
+                    }
+                });
+        }
+    });
+
+
+    function updateVal(currentEle, value) {
+        var titleInput = currentEle.siblings('.thVal');
+        titleInput.val(value);
+        currentEle.css('display','none');
+        titleInput.css('display','block');
+
+      titleInput.focus();
+      titleInput.keyup(function (event) {
+          if (event.keyCode == 13) {
+              $(currentEle).html(titleInput.val().trim());
+              titleInput.css('display','none');
+              currentEle.css('display','block');
+          }
+      });
+    }
+</script>

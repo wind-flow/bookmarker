@@ -31,10 +31,9 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
   #letter_opener 젬 위해서
-  config.action_mailer.delivery_method = :letter_opener
-
+  # config.action_mailer.delivery_method = :letter_opener
   #devise 젬 이용시 회원가입 안내 이메일 전송
-  config.action_mailer.default_url_options = {host: 'localhost:3000'}
+  # config.action_mailer.default_url_options = {host: 'localhost:3000'}
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

@@ -8,8 +8,7 @@ class BookmkfoldersController < ApplicationController
     @bookmkfolders = Bookmkfolder.all
     # @bookmkfolders = Bookmkfolder.order("sequence")
     @bookmkfolder = Bookmkfolder.new
-    @bookmks = Bookmk.all
-    @bookmk = Bookmk.new
+
   end
 
   # GET /bookmkfolders/1

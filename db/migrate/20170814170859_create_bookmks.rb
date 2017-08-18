@@ -7,8 +7,6 @@ class CreateBookmks < ActiveRecord::Migration[5.0]
       t.integer :bookmkclick
       t.integer :bookmkfolder_id
       t.integer :user_id
-
-
       t.timestamps
     end
   end
