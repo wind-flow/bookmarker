@@ -16,4 +16,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require_bookmarker3
+//= require bookmarker3

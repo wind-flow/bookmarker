@@ -1,13 +1,12 @@
-<h1 class ="logo large">BOOKMARKER</h1>
+<h1 class ="logo large">Book Marker</h1>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
   <div class="forceColor"></div>
   <div class="form_row_email">
-    <div class="spanColor" style="height:41px;"></div>
-    <%= f.input :username, placeholder: '닉네임', label: false, required: true, autofocus: true, input_html: { class:  'input' } %>
-    <%= f.input :email, placeholder: '이메일', label: false, required: true, autofocus: true, input_html: { class:  'input' } %>
-    <%= f.input :password, placeholder: '비밀번호', label: false, required: true, input_html: {:class => "input"}, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, placeholder: '비밀번호 확인', label: false, required: true, input_html: { class:  'input' } %>
+    <%= f.input :username, placeholder: '유저이름을 입력해주세요', label: false, required: true, autofocus: true, input_html: { class:  'input' } %>
+    <%= f.input :email, placeholder: '이메일을 입력해주세요.', label: false, required: true, autofocus: true, input_html: { class:  'input' } %>
+    <%= f.input :password, placeholder: '비밀번호는 6자 이상 입력해주세요.', label: false, required: true, input_html: {:class => "input"} %>
+    <%= f.input :password_confirmation, placeholder: '비밀번호를 한번 더 입력해주세요.', label: false, required: true, input_html: { class:  'input' } %>
   </div>
 
   <div class="form-actions">
