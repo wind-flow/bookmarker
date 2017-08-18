@@ -1,5 +1,5 @@
 class BookmkfoldersController < ApplicationController
-  before_action :set_bookmkfolder, only: [:show, :edit, :update, :destroy]
+  # before_action :set_bookmkfolder, only: [:show, :edit, :update, :destroy]
 
   # GET /bookmkfolders
   # GET /bookmkfolders.json
@@ -46,26 +46,6 @@ class BookmkfoldersController < ApplicationController
     end
   end
 
-  def createfolder
-    @bookmkfolder = Bookmkfolder.new(bookmkfolder_params)
-    @bookmkfolder.user = current_user
-    @bookmkfolder.sequence = Bookmkfolder.count + 1
-    @bookmkfolder.bookmkfoldercolor = colors.at(rand(colors.size))
-
-    respond_to do |format|
-      if @bookmkfolder.save
-        format.html { redirect_to @bookmkfolder, notice: 'Bookmkfolder was successfully created.' }
-        format.js {}
-        format.json { render :show, status: :created, location: @bookmkfolder }
-
-      else
-        format.html { render :new }
-        format.json { render json: @bookmkfolder.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-
   # PATCH/PUT /bookmkfolders/1
   # PATCH/PUT /bookmkfolders/1.json
   def update
@@ -102,19 +82,21 @@ class BookmkfoldersController < ApplicationController
     folder = params[:sequence]
     puts params[:sequence]
     for i in 1..folder.size
-        fold = Bookmkfolder.find(folder.at(i))
-        fold.sequence = params[:sequence].index(i.to_s)
+        # puts folder.at(i)
+        fold = Bookmkfolder.find(folder.at(i-1))
+        fold.sequence = i
         fold.save
     end
   end
+
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_bookmkfolder
-      @bookmkfolder = Bookmkfolder.find(params[:id])
-    end
+    # def set_bookmkfolder
+    #   @bookmkfolder = Bookmkfolder.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def bookmkfolder_params
-      params.require(:bookmkfolder).permit(:bookmkfoldertitle)
-    end
+  def bookmkfolder_params
+    params.require(:bookmkfolder).permit(:bookmkfoldertitle)
+  end
 end

@@ -15,25 +15,25 @@ ActiveRecord::Schema.define(version: 20170817123245) do
   create_table "bookmkfolders", force: :cascade do |t|
     t.string   "bookmkfoldertitle"
     t.string   "bookmkfoldercolor"
-    t.integer  "bookmkid_id"
-    t.integer  "email_id"
+    t.integer  "bookmk_id"
     t.integer  "user_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "sequence"
-    t.index ["bookmkid_id"], name: "index_bookmkfolders_on_bookmkid_id"
-    t.index ["email_id"], name: "index_bookmkfolders_on_email_id"
+    t.index ["bookmk_id"], name: "index_bookmkfolders_on_bookmk_id"
     t.index ["user_id"], name: "index_bookmkfolders_on_user_id"
   end
 
   create_table "bookmks", force: :cascade do |t|
-    t.string   "bookmkobj"
+    t.string   "bookmkTitle",     default: ""
+    t.string   "bookmkLink",      default: "#"
+    t.string   "bookmkImgUrl",    default: ""
     t.integer  "bookmkseq"
     t.integer  "bookmkclick"
     t.integer  "bookmkfolder_id"
     t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.index ["bookmkfolder_id"], name: "index_bookmks_on_bookmkfolder_id"
     t.index ["user_id"], name: "index_bookmks_on_user_id"
   end

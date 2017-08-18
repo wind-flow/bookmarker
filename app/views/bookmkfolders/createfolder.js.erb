@@ -7,8 +7,8 @@
     var createbarMenu = function (title) {
         return title
     };
-    var createPanelTemplate = function (title, color) {
-        return '<div class="panel-wrapped">\
+    var createPanelTemplate = function (title, color, bookmkfolderid) {
+        return '<div class="panel-wrapped" data-id="bookmkfolderid">\
                     <div class="panel" style="background-color:' + color + '">\
                         <h2 class="panel-title">' + title + '</h2>\
                         <button type="button" class="remove-button" href="#"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i></button>\
@@ -16,7 +16,7 @@
                         <div class="panel-menu">\
                             <button class="addfolder js-add-card">Paste URL here</button>\
                             <div class="add-card-form" style="display: none">\
-                                <input type="text" name="input" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Paste URL here">\
+                                <input type="text" name="bookmk[bookmkobj]" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Paste URL here">\
                                 <input type="button" value="SAVE" class="save-button js-save-card">\
                                 <button class="delete-button js-delete-btn"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>\
                             </div>\
@@ -36,7 +36,7 @@
     var title = panelTitle.val();
     panelTitle.val('');
 
-    panel.before(createPanelTemplate("<%=@bookmkfolder.bookmkfoldertitle%>", "<%=@bookmkfolder.bookmkfoldercolor%>"));
+    panel.before(createPanelTemplate("<%=@bookmkfolder.bookmkfoldertitle%>", "<%=@bookmkfolder.bookmkfoldercolor%>", "<%=@bookmkfolder.id%>"));
     barMenu.append(createbarMenu(title));
     $('.js-add-panel').css('display', 'block');
     $('.js-panel-input').css('display', 'none');

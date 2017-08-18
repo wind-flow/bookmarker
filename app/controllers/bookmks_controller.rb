@@ -1,5 +1,4 @@
 class BookmksController < ApplicationController
-  before_action :set_bookmk, only: [:show, :edit, :update, :destroy]
 
   # GET /bookmks
   # GET /bookmks.json
@@ -12,6 +11,26 @@ class BookmksController < ApplicationController
   def show
   end
 
+  def addBookmark
+      @user = current_user
+      begin
+        link = LinkThumbnailer.generate(params[:title])
+        bookmark = Bookmark.new(category_id: params[:categoryId],
+                                title: link.title,
+                                link: params[:title],
+                                img_url: link.images.first.src.to_s)
+        bookmark.save
+        render :json => {:isSuccess => true,
+                           :title => bookmark.title,
+                           :link => bookmark.link,
+                           :img_url => bookmark.img_url}
+        rescue LinkThumbnailer::Exceptions => e
+        # do something
+        render :json => {:issSuccess => false}
+      end
+  end
+
+
   # GET /bookmks/new
   def new
     @bookmk = Bookmk.new
@@ -23,18 +42,48 @@ class BookmksController < ApplicationController
 
   # POST /bookmks
   # POST /bookmks.json
-  def create
-    @bookmk = Bookmk.new(bookmk_params)
+  def createbmk
 
-    respond_to do |format|
-      if @bookmk.save
-        format.html { redirect_to @bookmk, notice: 'Bookmk was successfully created.' }
-        format.json { render :show, status: :created, location: @bookmk }
-      else
-        format.html { render :new }
-        format.json { render json: @bookmk.errors, status: :unprocessable_entity }
-      end
+    begin
+      link = LinkThumbnailer.generate(params[:bookmkTitle])
+
+      @bookmkfoldertmp = Bookmkfolder.find(params[:bookmkfolderid])
+      @bookmk = Bookmk.new
+      # @bookmk = @bookmkfoldertmp.bookmk.new#.build(id: params[:bookmkfolderid], bookmkobj: params[:bookmkobj], user: current_user)
+      # @bookmk = Bookmk.new#(bookmkfolder_id: params[:bookmkfolderid].to_i, bookmkobj: params[:bookmkobj])
+      @bookmk.bookmkfolder_id = params[:bookmkfolderid]
+      @bookmk.bookmkTitle = link.title
+      @bookmk.bookmkLink = params[:bookmkTitle]
+      @bookmk.bookmkImgUrl = link.images.first.src.to_s
+
+      @bookmk.user = current_user
+      @bookmk.save
+
+      @bookmkfoldertmp.bookmks = @bookmk.id
+      puts "1"
+      # @bookmkfoldertmp.save
+      @bookmkfoldertmp.save
+      puts "2"
+      render :json => {:isSuccess => true,
+                        :title => @bookmk.bookmkTitle,
+                        :link => @bookmk.bookmkLink,
+                        :imgUrl => @bookmk.bookmkImgUrl
+                       }
+puts "3"
+    rescue LinkThumbnailer::Exceptions => e
+puts "4"
+      render :json => {:isSuccess => false }
     end
+puts "5"
+    # respond_to do |format|
+    #   if @bookmk.save
+    #     format.html { redirect_to @bookmk, notice: 'Bookmk was successfully created.' }
+    #     format.json { render :show, status: :created, location: @bookmk }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @bookmk.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /bookmks/1
@@ -63,12 +112,9 @@ class BookmksController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_bookmk
-      @bookmk = Bookmk.find(params[:id])
-    end
+    # def set_bookmk
+    #   @bookmk = Bookmk.find(params[:id])
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def bookmk_params
-      params.require(:bookmk).permit(:bookmkobj, :bookmkseq, :bookmkclick, :bookmkfolder_id, :user_id)
-    end
 end

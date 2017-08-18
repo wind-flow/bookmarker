@@ -69,18 +69,34 @@ $(document).ready(function(){
             cardInput.val('');
             return title;
         };
-        var createCardTemplate = function (link) {
+        var createCardTemplate = function (title, link, img) {
             return '<li class="card-item">\
                         <a class="card-link" href="' + link + '" target="_black">\
-                            <img class="card-thumbnail" src="#" alt="#">\
-                            <p class="card-txt">' + link + '</p>\
+                            <img class="card-thumbnail" src="' + img + '" alt="#">\
+                            <p class="card-txt">' + title + '</p>\
                         </a>\
                     </li>';
         }
-        cardList.prepend(createCardTemplate(getCardLink()));
-        panelMenu.css('background-color', 'transparent');
-        panelMenu.find('.js-add-card').css('display', 'block');
-        panelMenu.find('.add-card-form').css('display', 'none');
+        $.ajax({
+            method: "POST",
+            url: "/bookmks/add",
+            data: {
+              bookmkfolderid: saveBtn.attr("data-id"),
+              bookmkTitle: cardInput.val()
+            },
+            success: function(data){
+                if(data.isSuccess) {
+                    cardList.prepend(createCardTemplate(data.title, data.link, data.imgUrl));
+                    cardInput.val('');
+                    panelMenu.css('background-color', 'transparent');
+                    panelMenu.find('.js-add-card').css('display', 'block');
+                    panelMenu.find('.add-card-form').css('display', 'none');
+                } else {
+                    alert("정확한 url을 입력해주세요.");
+                    cardInput.val('');
+                }
+            }
+        });
     })
 
 
@@ -144,7 +160,6 @@ $(document).ready(function(){
            }
                 $.post($(this).data('update-url'), {
                   "sequence" : sort
-                  // "bookmkfolderid" : id
                 })
              }
     })

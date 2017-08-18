@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rails_sortable'
 
+gem 'link_thumbnailer'
+
 gem 'devise' #회원가입 및 인증
 gem 'rolify' #role 관리
 gem 'authority' #권한 설정
