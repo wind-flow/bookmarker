@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :bookmkfolders do
     collection {post :sort }
   end
+
   post "/bookmks/add" => "bookmks#createbmk"
+  post "/bookmk/sort" => "bookmks#sort"
   # resources :posts
   # post "bookmkfolder/newfolder" => "bookmkfolder#newfolder"
 

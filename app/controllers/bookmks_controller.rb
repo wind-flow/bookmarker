@@ -60,21 +60,16 @@ class BookmksController < ApplicationController
       @bookmk.save
 
       @bookmkfoldertmp.bookmks = @bookmk.id
-      puts "1"
       # @bookmkfoldertmp.save
       @bookmkfoldertmp.save
-      puts "2"
       render :json => {:isSuccess => true,
                         :title => @bookmk.bookmkTitle,
                         :link => @bookmk.bookmkLink,
                         :imgUrl => @bookmk.bookmkImgUrl
                        }
-puts "3"
     rescue LinkThumbnailer::Exceptions => e
-puts "4"
       render :json => {:isSuccess => false }
     end
-puts "5"
     # respond_to do |format|
     #   if @bookmk.save
     #     format.html { redirect_to @bookmk, notice: 'Bookmk was successfully created.' }
@@ -107,6 +102,19 @@ puts "5"
     respond_to do |format|
       format.html { redirect_to bookmks_url, notice: 'Bookmk was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def sort
+    puts "===================="
+    bookmker = params[:bmksequence]
+    puts bookmker
+    puts "===================="
+    for i in 1..bookmker.size
+        bookmk = Bookmk.find(bookmker.at(i-1))
+        bookmk.bookmkseq = i
+        puts bookmk.bookmkTitle
+        bookmk.save
     end
   end
 

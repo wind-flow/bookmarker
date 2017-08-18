@@ -86,6 +86,7 @@ $(document).ready(function(){
             },
             success: function(data){
                 if(data.isSuccess) {
+                    alert(data)
                     cardList.prepend(createCardTemplate(data.title, data.link, data.imgUrl));
                     cardInput.val('');
                     panelMenu.css('background-color', 'transparent');
@@ -162,6 +163,23 @@ $(document).ready(function(){
                   "sequence" : sort
                 })
              }
+    })
+
+    $(".card-list").sortable({
+      // connectWith:".board-canvas"
+      update: function(event, ui) {
+        children = $(".card-item");
+           var sort = new Array();
+           var bmkid = new Array();
+           for (x = 0; x < children.length; x++) {
+             if(children[x].id != null){
+               sort.push(children[x].id.slice(7,));
+             }
+           }
+            $.post($(this).data('update-url'), {
+              "bmksequence" : sort
+            })
+         }
     })
 
 });

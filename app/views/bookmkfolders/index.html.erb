@@ -12,9 +12,9 @@
                     <button class="delete-button"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>
                 </div>
             </div>
-            <ul class="card-list">
-              <% bookmkfolder.bookmks.order("id asc").each do |bookmark| %>
-              <li class="card-item" id=bookmk_"<%=bookmark.id%>">
+            <ul class="card-list" data-update-url="/bookmk/sort">
+              <% bookmkfolder.bookmks.order("bookmkseq asc").each do |bookmark| %>
+              <li class="card-item" id="bookmk_<%=bookmark.id%>">
               <a class="card-link" href="<%=bookmark.bookmkLink%>" target="_black">
               <img class="card-thumbnail" src="<%=bookmark.bookmkImgUrl %>" alt="#">
               <p class="card-txt"><%=bookmark.bookmkTitle%></p></a>
