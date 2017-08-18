@@ -37,3 +37,42 @@
           </div>
     </div>
 </ul>
+<ul class="board-canvas" data-update-url="<%=sort_bookmkfolders_url%>">
+  <% @bookmkfolders.each do |bookmkfolder| %>
+      <div class="panel-wrapped" data-id="<%=bookmkfolder.id%>">
+          <li id="folder_<%=bookmkfolder.id%>" class="panel" style="background-color:<%=bookmkfolder.bookmkfoldercolor%>">
+            <h2 class="panel-title"><%=bookmkfolder.bookmkfoldertitle%></h2>
+            <button type="button" class="remove-button" href="#"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i></button>
+            <div class="panel-menu">
+                <button class="addfolder js-add-card">Paste URL Here</button>
+                <div class="add-card-form" style="display: none">
+                    <input type="text" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">
+                    <input type="button" value="SAVE" class="save-button js-save-card"  data-id="<%=bookmkfolder.id%>">
+                    <button class="delete-button"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>
+                </div>
+            </div>
+            <ul class="card-list">
+              <% bookmkfolder.bookmks.order("id asc").each do |bookmark| %>
+              <li class="card-item" id=bookmk_"<%=bookmark.id%>">
+              <a class="card-link" href="<%=bookmark.bookmkLink%>" target="_black">
+              <img class="card-thumbnail" src="<%=bookmark.bookmkImgUrl %>" alt="#">
+              <p class="card-txt"><%=bookmark.bookmkTitle%></p></a>
+              </li>
+              <% end %>
+            </ul>
+          </li>
+      </div>
+  <%end%>
+
+    <div class="panel-add">
+          <%= button_tag "Add a folder", type: 'button', class: 'addfolder js-add-panel' %>
+          <div class="board-make js-panel-input" style="display:none">
+              <%= simple_form_for @bookmkfolder, remote: true, url: {action: "createfolder"} do |f| %>
+              <%= f.input_field :bookmkfoldertitle, class: 'board-make-input', :autocomplete => :off, :autocorrect => :off, :spellcheck => false, placeholder: 'Add a folder' %>
+              <%= f.submit "SAVE", class: 'save-button js-save-panel' %>
+              <%= button_tag "X", type: 'button' , class: 'js-delete-panel' %>
+              <%= f.hidden_field :bookmkfoldercolor, class: 'js-color' %>
+              <% end %>
+          </div>
+    </div>
+</ul>
