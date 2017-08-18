@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   # post "bookmkfolder/newfolder" => "bookmkfolder#newfolder"
 
   post "/bookmkfolders/createfolder" => "bookmkfolders#createfolder"
-  post "/bookmkfolders/:bookmkfolder_id" => "bookmks#createbookmk"
+  # post "/bookmkfolders/:bookmkfolder_id" => "bookmks#createbookmk"
+  post "bookmks/createbookmk" => "bookmks#createbookmk"
   devise_for :users, controllers: {registrations: 'admin/registrations', :omniauth_callbacks => "admin/omniauth_callbacks"}
   # :controllers => { :sessions => "admin/sessions"}
   # devise_scope :user do

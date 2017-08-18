@@ -1,16 +1,26 @@
+<div class="white-bar">
+  <div class="bar-menu">
+      <% @categories.each do |category| %>
+         <label for="filter-category-<%=bookmkfolder.id %>" style="background-color: <%= bookmkfolder.bookmkfoldercolor %>"><%= category.title %>
+            <input type="checkbox" name="filter-category" value="<%= bookmkfolder.id %>" id="filter-category-<%=bookmkfolder.id %>" data-color="<%= bookmkfolder.bookmkfoldercolor %>" class="filter-category js-checkbox-category" checked>
+         </label>
+      <% end %>
+  </div>
+</div>
+
 <ul class="board-canvas" data-update-url = "<%=sort_bookmkfolders_url %>">
   <% @bookmkfolders.each do |bookmkfolder| %>
-          <div class="panel-wrapped">
-              <li id="<%=bookmkfolder.id%>" class="panel" style = "background-color:<%=bookmkfolder.bookmkfoldercolor%>">
-                <%= text_field_tag :test, "", class: 'thVal' %>
+          <div class="panel-wrapped  data-id="<%= bookmkfolder.id %>">
+              <li class="panel" style = "background-color:<%= bookmkfolder.bookmkfoldercolor %>">
                 <h2 class= "panel-title" ><%= bookmkfolder.bookmkfoldertitle %></h2>
+                <%= text_field_tag :test, "", class: 'thVal' %>
                 <div class="panel-menu">
                   <%= button_tag "Add a card", type: 'button', class: 'addfolder js-add-card' %>
                   <div class="add-card-form">
-                    <%= simple_form_for @bookmkfolder, remote: true, url: {action:  @bookmkfolder.id } do |k| %>
+                    <%= simple_form_for @bookmkfolder, remote: true do |k| %>
                       <%= k.input_field :bookmktitle, class: 'board-make-input', autocomplete: :off, autocorrect: :off, spellcheck: false, placeholder: 'Add a bookmark' %>
-                      <%= button_tag "SAVE", type: 'submit' , class: 'save-button js-save-card' %>
-                      <%= button_tag "", type: 'button', class: 'delete-button' do  %>
+                      <%= button_tag "SAVE", type: 'submit' , class: 'save-button js-save-card' data-categoryid: bookmkfolder.id %>
+                      <%= button_tag "", type: 'button', class: 'delete-button js-delete-btn' do  %>
                       <span class="fa fa-times fa-1x" aria-hidden="true"></span>
                       <% end %>
                     <% end %>
@@ -19,7 +29,7 @@
               </li>
 
               <ul class="card-list">
-                <% bookmkfolder.bookmks.each do |bookmk| %>
+                <% bookmkfolder.bookmks.order('id desc').each do |bookmk| %>
                   <li class ="card-item">
                     <%= link_to "", bookmk.bookmktitle , class: 'card-link' %>
                     <%= image_tag "#", class: 'card-thumbnail' %>
@@ -34,7 +44,7 @@
           <%= button_tag "Add a folder", type: 'button', class: 'addfolder js-add-panel' %>
             <div class="board-make js-panel-input" style="display:none">
               <%= simple_form_for @bookmkfolder, remote: true, url: {action: "createfolder"} do |f| %>
-              <%= f.input_field :bookmkfoldertitle, class: 'board-make-input', :autocomplete => :off, :autocorrect => :off, :spellcheck => false, placeholder: 'Add a folder' %>
+              <%= f.input_field :bookmkfoldertitle, class: 'board-make-input js-panel-title', :autocomplete => :off, :autocorrect => :off, :spellcheck => false, placeholder: 'Add a folder' %>
               <%= f.submit "SAVE", class: 'save-button js-save-panel' %>
               <%= button_tag "X", type: 'button' , class: 'delete-button js-delete-panel' %>
               <%= f.hidden_field :bookmkfoldercolor, class: 'js-color' %>
@@ -44,12 +54,126 @@
 </ul>
 
 
-<!-- <script>
-    var createColor = function() {
-            var colors = ['#c9ddff', '#c9ffdd', '#ffd2c9', '#c9caff', '#fdc9ff', '#fffdc9', '#c9fffc', '#ffc9c9', '#ffe5c9', '#eaffc9']
-//
-            var rand = Math.floor(Math.random() * colors.length);
-            return colors[rand];
+<script>
+    $('.js-save-panel').on('click', function() {
+        var canvas = $('.board-canvas');
+        var panel = $('.panel-add');
+        var panelTitle = $('.js-panel-title');
+        var tagList = $('.bar-menu');
+        var createPanelTemplate = function(title, color, bookmkfolderId) {
+        return '<div class="panel-wrapped" data-id="' + bookmkfolderId + '">\
+                    <div class="panel" style="background-color:' + color + '">\
+                        <h2 class="panel-title">' + title + '</h2>\
+                        <input class="thVal" type="text" style="display: none">\
+                        <div class="panel-menu">\
+                            <button class="addfolder js-add-card">Add a card</button>\
+                            <div class="add-card-form" style="display: none">\
+                                <input type="text" name="bookmk[bookmktitle]" class="board-make-input" autocomplete="off" autocorrect="off" spellcheck="false" placeholder=" Add a folder">\
+                                <input type="button" value="SAVE" class="save-button js-save-card" data-categoryid=' + bookmkfolderId + '>\
+                                <button class="delete-button js-delete-btn"><span class="fa fa-times fa-1x" aria-hidden="true"></span></button>\
+                            </div>\
+                        </div>\
+                        <ul class="card-list">\
+                        </ul>\
+                    </div>\
+                </div>'
         }
-    $('.js-color').val(createColor());
-</script> -->
+        var templateCategoryTag = function(id, title, color) {
+            return '<label for="filter-category-' + id + '" style="background-color:' + color + '">' + title + '\
+                        <input type="checkbox" name="filter-category" value="' + id + '" id="filter-category-' + id + '" data-color="' + color + '" class="filter-category js-checkbox-category" checked>\
+                    </label>';
+        }
+        $.ajax({
+        method: "POST",
+        url: "/bookmkfolder/createfolder",
+        data: { title: panelTitle.val()},
+        success: function(data){
+            panel.before(createPanelTemplate(data.title, data.color, data.id));
+            tagList.append(templateCategoryTag(data.id, data.title, data.color));
+            panelTitle.val('');
+            $('.js-add-panel').css('display', 'block');
+            $('.js-panel-input').css('display','none');
+        }
+        });
+    });
+    $('.board-canvas').on('click', '.js-save-card', function() {
+        var saveBtn = $(this);
+        var panelMenu = saveBtn.parents('.panel-menu')
+        var cardList = panelMenu.siblings('.card-list');
+        var cardInput = saveBtn.siblings('.board-make-input');
+
+        var createCardTemplate = function(title) {
+            return '<li class="card-item">\
+                            <p class="card-txt">' + title + '</p>\
+                        </a>\
+                    </li>'
+        }
+        $.ajax({
+            method: "POST",
+            url: "/bookmks/bookmkfolder",
+            data: { categoryId: saveBtn.attr("data-categoryid"),
+                    title: cardInput.val()}
+            // success: function(data){
+            //     if(data.isSuccess) {
+            //         console.log(data);
+            //         cardList.prepend(createCardTemplate(data.title, data.link, data.img_url));
+            //         cardInput.val('');
+            //         panelMenu.css('background-color', 'transparent');
+            //         panelMenu.find('.js-add-card').css('display', 'block');
+            //         panelMenu.find('.add-card-form').css('display', 'none');
+            //     } else {
+            //         alert("정확한 url을 입력해주세요.");
+            //         cardInput.val('');
+            //     }
+            // }
+        });
+    });
+
+    $('.bar-menu').on('change', '.js-checkbox-category', function() {
+        var category = $(this);
+        if(category.is(":checked")) {
+            category.parent().css('background-color', category.data('color'));
+            $('.panel-wrapped[data-id=' + category.val() + ']').css('display', 'inline-block');
+        } else {
+            category.parent().css('background-color', '#eaeaea');
+            $('.panel-wrapped[data-id=' + category.val() + ']').css('display', 'none');
+        }
+    });
+
+    $(document).on('keyup', ".thVal", function (e) {
+        if (event.keyCode === 13) {
+            e.stopPropagation();
+            var titleInput = $(this);
+            var titleText = $(this).siblings('.panel-title');
+            var categoryId = $(this).parents('.panel-wrapped').data('id');;
+                $.ajax({
+                    method: "POST",
+                    url: "/category/modify",
+                    data: { id: categoryId,
+                            title: titleInput.val()},
+                    success: function(data){
+                        titleText.html(data.title);
+                        titleInput.css('display','none');
+                        titleText.css('display','block');
+                    }
+                });
+        }
+    });
+
+
+    function updateVal(currentEle, value) {
+        var titleInput = currentEle.siblings('.thVal');
+        titleInput.val(value);
+        currentEle.css('display','none');
+        titleInput.css('display','block');
+
+      titleInput.focus();
+      titleInput.keyup(function (event) {
+          if (event.keyCode == 13) {
+              $(currentEle).html(titleInput.val().trim());
+              titleInput.css('display','none');
+              currentEle.css('display','block');
+          }
+      });
+    }
+</script>

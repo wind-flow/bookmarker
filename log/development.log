@@ -5440,3 +5440,169 @@ app/views/bookmkfolders/index.html.erb:2:in `_app_views_bookmkfolders_index_html
   Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
   Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (2687.3ms)
+Started GET "/" for 127.0.0.1 at 2017-08-18 00:27:49 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BookmkfoldersController#index as HTML
+Completed 401 Unauthorized in 88ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-18 00:28:13 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (73.1ms)
+Completed 200 OK in 11625ms (Views: 11589.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-18 00:34:00 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 1974ms (Views: 1969.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-18 00:40:33 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 7323ms (Views: 7317.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-08-18 00:40:45 +0900
+Processing by Admin::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (67.0ms)
+Completed 200 OK in 2529ms (Views: 2525.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-08-18 00:42:55 +0900
+Processing by Admin::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 2375ms (Views: 2371.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-08-18 00:43:18 +0900
+Processing by Admin::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 1865ms (Views: 1862.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-08-18 00:43:34 +0900
+Processing by Admin::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 1891ms (Views: 1887.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-08-18 00:43:46 +0900
+Processing by Admin::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GXP6L2kd/735wvL5oaMBgDDPjqWaYTkoe/uSkRaF8mO57gbJU/UKg1Ee/3MZXBrHwFXs6qPJP3tBzWQ4YoVwpA==", "user"=>{"username"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"회원가입"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "username", "encrypted_password", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "test@gmail.com"], ["username", "test"], ["encrypted_password", "$2a$11$YTq9f78nBvVxu81RWXBiPeJ3Hb/K.TNKaT8Tk70p.w3yIz4/FvxD6"], ["confirmation_token", "sP6CwNRKmA6MA84vL21f"], ["confirmation_sent_at", "2017-08-17 15:43:46.765785"], ["created_at", "2017-08-17 15:43:46.765785"], ["updated_at", "2017-08-17 15:43:46.765785"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mRole Load (0.5ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."name" = ? AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT ?[0m  [["name", "user"], ["LIMIT", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "roles" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "user"], ["created_at", "2017-08-17 15:43:46.870880"], ["updated_at", "2017-08-17 15:43:46.870880"]]
+  [1m[36mRole Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ? AND "roles"."id" = ? LIMIT ?[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "roles".id FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."id" = 1[0m
+  [1m[36mRole Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES (?, ?)[0m  [["user_id", 2], ["role_id", 1]]
+  [1m[35m (19.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (11.5ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 3763.1ms
+Sent mail to test@gmail.com (1066.3ms)
+Date: Fri, 18 Aug 2017 00:43:53 +0900
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: test@gmail.com
+Message-ID: <5995b9b9a1fbf_e7c82aefacc424de@HUHSEUNG.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome test@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=sP6CwNRKmA6MA84vL21f">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 10206ms (ActiveRecord: 29.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-18 00:43:56 +0900
+Processing by BookmkfoldersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-18 00:43:56 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (14.0ms)
+Started GET "/users/confirmation?confirmation_token=sP6CwNRKmA6MA84vL21f" for 127.0.0.1 at 2017-08-18 00:43:57 +0900
+Completed 200 OK in 1225ms (Views: 1223.6ms | ActiveRecord: 0.0ms)
+
+
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"sP6CwNRKmA6MA84vL21f"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "sP6CwNRKmA6MA84vL21f"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2017-08-17 15:43:58.188203"], ["updated_at", "2017-08-17 15:43:58.195208"], ["id", 2]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 99ms (ActiveRecord: 19.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-08-18 00:43:58 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 1451ms (Views: 1448.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-08-18 00:44:07 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Bm93mCyo7AWlf5f02VTaOP/rUtUbAXOlpfb5PN4x2x8hEE4WlpWjr5J89VrmkgvE2XPBG3EA52soS1Nh3hFqw==", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"로그인"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-08-17 15:44:07.632544"], ["last_sign_in_at", "2017-08-17 15:44:07.632544"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2017-08-17 15:44:07.637546"], ["id", 2]]
+  [1m[35m (16.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1766ms (ActiveRecord: 21.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-18 00:44:09 +0900
+Processing by BookmkfoldersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering bookmkfolders/index.html.erb within layouts/application
+  [1m[36mBookmkfolder Load (1.0ms)[0m  [1m[34mSELECT "bookmkfolders".* FROM "bookmkfolders"[0m
+  Rendered bookmkfolders/index.html.erb within layouts/application (101.1ms)
+Completed 500 Internal Server Error in 1045ms (ActiveRecord: 18.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `bookmktitle' for #<Bookmkfolder:0x0000000cd638a8>):
+     8:                   <%= button_tag "Add a card", type: 'button', class: 'addfolder js-add-card' %>
+     9:                   <div class="add-card-form">
+    10:                     <%= simple_form_for @bookmkfolder, remote: true, url: {action:  @bookmkfolder.id } do |k| %>
+    11:                       <%= k.input_field :bookmktitle, class: 'board-make-input', autocomplete: :off, autocorrect: :off, spellcheck: false, placeholder: 'Add a bookmark' %>
+    12:                       <%= button_tag "SAVE", type: 'submit' , class: 'save-button js-save-card' %>
+    13:                       <%= button_tag "", type: 'button', class: 'delete-button' do  %>
+    14:                       <span class="fa fa-times fa-1x" aria-hidden="true"></span>
+  
+app/views/bookmkfolders/index.html.erb:11:in `block (2 levels) in _app_views_bookmkfolders_index_html_erb__998732878_124493840'
+app/views/bookmkfolders/index.html.erb:10:in `block in _app_views_bookmkfolders_index_html_erb__998732878_124493840'
+app/views/bookmkfolders/index.html.erb:2:in `_app_views_bookmkfolders_index_html_erb__998732878_124493840'
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.5ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/actionpack-5.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (4404.6ms)
